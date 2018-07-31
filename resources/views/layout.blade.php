@@ -160,7 +160,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fas fa-briefcase" style="width: 30px; font-size: 24px;"></i>
+                        <i class="fas fa-clipboard-check" style="width: 30px; font-size: 24px;"></i>
                         <span>Mark</span>
                     </a>
                 </li>
