@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[
+    'as' => 'student', function () {
+        return view('layout');
+    }
+]);
+Route::get('/teacher',[
+    'as' => 'teacher', function () {
+        return view('welcome');
+    }
+]);
