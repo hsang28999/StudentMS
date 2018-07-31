@@ -125,13 +125,13 @@
                     </a>
                     <ul class="ml-menu">
                         <li>
-                            <a href="pages/widgets/infobox/infobox-1.html">
+                            <a href="/subject">
                                 <i class="fas fa-sitemap" style="width: 30px; font-size: 20px;"></i>
                                 <span>Class</span>
                             </a>
                         </li>
                         <li>
-                            <a href="pages/widgets/infobox/infobox-1.html">
+                            <a href="/routine">
                                 <i class="fas fa-stream" style="width: 30px; font-size: 20px;"></i>
                                 <span>Subject</span>
                             </a>
@@ -274,7 +274,7 @@
     <!-- #END# Right Sidebar -->
 </section>
     <!-- #END# Right Sidebar -->
-</section>
+
 
 @yield("section")
 

@@ -21,3 +21,15 @@ Route::get('/teacher',[
         return view('welcome');
     }
 ]);
+Route::get('/1',function(){
+    return 1;
+});
+Route::get('assignment',function(){
+    return view('assignment');
+});
+Route::get('routine',function(){
+    return view('routine');
+});
+Route::get('subject',function(){
+    return view('subject');
+});
