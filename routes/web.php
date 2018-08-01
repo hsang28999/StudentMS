@@ -27,9 +27,13 @@ Route::get('/1',function(){
 Route::get('assignment',function(){
     return view('assignment');
 });
-Route::get('routine',function(){
-    return view('routine');
-});
-Route::get('subject',function(){
-    return view('subject');
-});
+Route::get('class',[
+    'as' => 'class',function() {
+        return view('class');
+    }
+]);
+Route::get('subject',[
+    'as' => 'subject',function() {
+        return view('subject');
+    }
+]);
