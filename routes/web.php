@@ -24,16 +24,34 @@ Route::get('/teacher',[
 Route::get('/1',function(){
     return 1;
 });
-Route::get('assignment',function(){
-    return view('assignment');
+
+
+
+Route::group(['prefix' => 'student'],function (){
+    Route::group(['prefix' => 'class'],function (){
+        Route::get('',[
+            'as' => 'class',function() {
+                return view('student.class');
+            }
+        ]);
+        Route::get('create',[
+            'as' => 'createClass',function(){
+                return view('student.addClass');
+            }
+        ]);
+    });
+
+
+    Route::group(['prefix' => 'subject'],function (){
+        Route::get('create',[
+            'as' => 'createSubject',function(){
+                return view('student.addSubject');
+            }
+        ]);
+        Route::get('',[
+            'as' => 'subject',function() {
+                return view('student.subject');
+            }
+        ]);
+    });
 });
-Route::get('class',[
-    'as' => 'class',function() {
-        return view('class');
-    }
-]);
-Route::get('subject',[
-    'as' => 'subject',function() {
-        return view('subject');
-    }
-]);

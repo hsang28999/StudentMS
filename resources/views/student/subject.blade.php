@@ -13,7 +13,9 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header row clearfix">
+                        <a href="{{route('createSubject')}}">
                             <button class="btn btn-success">ADD SUBJECT</button>
+                        </a>
                         <div class="col-md-3 pull-right" >
                             <select class="form-control show-tick" data-live-search="true">
                                 <option>All</option>
