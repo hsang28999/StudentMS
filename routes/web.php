@@ -18,6 +18,6 @@ Route::get('/',[
 ]);
 Route::get('/teacher',[
     'as' => 'teacher', function () {
-        return view('welcome');
+        return view('pages.teacher_detail');
     }
 ]);
