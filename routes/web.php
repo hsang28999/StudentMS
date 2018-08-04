@@ -16,13 +16,17 @@ Route::get('/',[
         return view('layout');
     }
 ]);
-Route::get('/teacher',[
-    'as' => 'teacher', function () {
-        return view('welcome');
-    }
-]);
-Route::get('/1',function(){
-    return 1;
+Route::group(['prefix' => 'teacher'],function (){
+    Route::get('/',[
+        'as' => 'teacher',function() {
+            return view('teacher.teacher');
+        }
+    ]);
+    Route::get('/view',[
+        'as' => 'viewTeacher',function(){
+            return view('teacher.teacher_detail');
+        }
+    ]);
 });
 
 

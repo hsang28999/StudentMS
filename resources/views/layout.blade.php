@@ -23,20 +23,14 @@
     <!-- Animation Css -->
     <link href="{{ asset('plugins/animate-css/animate.css') }}" rel="stylesheet" />
 
-    <!-- JQuery DataTable Css -->
-    <link href="{{asset('plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css')}}" rel="stylesheet">
-
-    <!-- Morris Chart Css-->
-    <link href="{{ asset('plugins/morrisjs/morris.css') }}" rel="stylesheet" />
+    <link href="{{ asset('plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css') }}" rel="stylesheet" />
 
     <!-- Custom Css -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{{ asset('css/themes/all-themes.css') }}" rel="stylesheet" />
-
-    <!-- Bootstrap Select Css -->
-    <link href="../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{asset('css/custom.css')}}">
 </head>
 
 <body class="theme-red">
@@ -94,7 +88,7 @@
         <!-- User Info -->
         <div class="user-info">
             <div class="image">
-                <img src="images/user.png" width="48" height="48" alt="User" />
+                <img src="{{asset('images/user.png')}}" width="48" height="48" alt="User" />
             </div>
             <div class="info-container">
                 <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</div>
@@ -112,61 +106,61 @@
         <div class="menu">
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
-                <li class="active">
+                <li id="student">
                     <a href="index.html">
-                        <i class="fas fa-user-graduate" style="width: 30px; font-size: 24px;"></i>
+                        <i class="fas fa-user-graduate" style="font-size: 19px" ></i>
                         <span>Student</span>
                     </a>
                 </li>
-                <li>
+                <li id="teacher">
                     <a href="{{route('teacher')}}">
-                        <i class="fas fa-briefcase" style="width: 30px; font-size: 24px;"></i>
+                        <i class="fas fa-briefcase" style="font-size: 19px"></i>
                         <span>Teacher</span>
                     </a>
                 </li>
-                <li>
+                <li id="academic">
                     <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="fas fa-school" style="width: 30px; font-size: 24px;"></i>
+                        <i class="fas fa-school" style="font-size: 19px"></i>
                         <span>Academic</span>
                     </a>
                     <ul class="ml-menu">
-                        <li>
+                        <li id="academic_class">
                             <a href="{{route('class')}}">
-                                <i class="fas fa-sitemap" style="width: 30px; font-size: 20px;"></i>
+                                <i class="fas fa-sitemap"></i>
                                 <span>Class</span>
                             </a>
                         </li>
-                        <li>
+                        <li id="academic_subject">
                             <a href="{{route('subject')}}">
-                                <i class="fas fa-stream" style="width: 30px; font-size: 20px;"></i>
+                                <i class="fas fa-stream"></i>
                                 <span>Subject</span>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li id="attendance">
                     <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="fas fa-clipboard" style="width: 30px; font-size: 24px;"></i>
+                        <i class="fas fa-clipboard" style="font-size: 19px" ></i>
                         <span>Attendance</span>
                     </a>
                     <ul class="ml-menu">
-                        <li>
+                        <li id="attendance_student">
                             <a href="pages/widgets/infobox/infobox-1.html">
-                                <i class="fas fa-users" style="width: 30px; font-size: 20px;"></i>
+                                <i class="fas fa-users"></i>
                                 <span>Student Attendance</span>
                             </a>
                         </li>
-                        <li>
+                        <li id="attendance_teacher">
                             <a href="pages/widgets/infobox/infobox-1.html">
-                                <i class="fas fa-user-tie" style="width: 30px; font-size: 20px;"></i>
+                                <i class="fas fa-user-tie" ></i>
                                 <span>Teacher Attendance</span>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li id="mark">
                     <a href="#">
-                        <i class="fas fa-clipboard-check" style="width: 30px; font-size: 24px;"></i>
+                        <i class="fas fa-clipboard-check" style="font-size: 19px"></i>
                         <span>Mark</span>
                     </a>
                 </li>
@@ -279,9 +273,17 @@
     </aside>
     <!-- #END# Right Sidebar -->
 </section>
-    <!-- #END# Right Sidebar -->
-
-
+<!-- #END# Right Sidebar -->
+<script>
+    function activeSection(id1,id2) {
+        var element1 = document.getElementById(id1);
+        element1.classList.add("active");
+        if(id2 != "null") {
+            var element2 = document.getElementById(id2);
+            element2.classList.add("active");
+        }
+    };
+</script>
 @yield("section")
 
 <!-- Jquery Core Js -->
@@ -300,49 +302,21 @@
 <script src="{{ asset('plugins/node-waves/waves.js') }}"></script>
 
 <!-- Jquery DataTable Plugin Js -->
-<script src="{{asset('plugins/jquery-datatable/jquery.dataTables.js')}}"></script>
-<script src="{{asset('plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js')}}"></script>
-<script src="{{asset('plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js')}}"></script>
-<script src="{{asset('plugins/jquery-datatable/extensions/export/buttons.flash.min.js')}}"></script>
-<script src="{{asset('plugins/jquery-datatable/extensions/export/jszip.min.js')}}"></script>
-<script src="{{asset('plugins/jquery-datatable/extensions/export/pdfmake.min.js')}}"></script>
-<script src="{{asset('plugins/jquery-datatable/extensions/export/vfs_fonts.js')}}"></script>
-<script src="{{asset('plugins/jquery-datatable/extensions/export/buttons.html5.min.js')}}"></script>
-<script src="{{asset('plugins/jquery-datatable/extensions/export/buttons.print.min.js')}}"></script>
-
-<!-- Jquery CountTo Plugin Js -->
-<script src="{{ asset('plugins/jquery-countto/jquery.countTo.js') }}"></script>
-
-<!-- Morris Plugin Js -->
-<script src="{{ asset('plugins/raphael/raphael.min.js') }}"></script>
-<script src="{{ asset('plugins/morrisjs/morris.js') }}"></script>
-
-{{--<!-- ChartJs -->--}}
-{{--<script src="{{ asset('plugins/chartjs/Chart.bundle.js') }}"></script>--}}
-
-{{--<!-- Flot Charts Plugin Js -->--}}
-{{--<script src="{{ asset('plugins/flot-charts/jquery.flot.js') }}"></script>--}}
-{{--<script src="{{ asset('plugins/flot-charts/jquery.flot.resize.js') }}"></script>--}}
-{{--<script src="{{ asset('plugins/flot-charts/jquery.flot.pie.js') }}"></script>--}}
-{{--<script src="{{ asset('plugins/flot-charts/jquery.flot.categories.js') }}"></script>--}}
-{{--<script src="{{ asset('plugins/flot-charts/jquery.flot.time.js') }}"></script>--}}
-
-{{--<!-- Sparkline Chart Plugin Js -->--}}
-{{--<script src="{{ asset('plugins/jquery-sparkline/jquery.sparkline.js') }}"></script>--}}
+<script src="{{ asset('plugins/jquery-datatable/jquery.dataTables.js') }}"></script>
+<script src="{{ asset('plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js') }}"></script>
+<script src="{{ asset('plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('plugins/jquery-datatable/extensions/export/buttons.flash.min.js') }}"></script>
+<script src="{{ asset('plugins/jquery-datatable/extensions/export/jszip.min.js') }}"></script>
+<script src="{{ asset('plugins/jquery-datatable/extensions/export/pdfmake.min.js') }}"></script>
+<script src="{{ asset('plugins/jquery-datatable/extensions/export/vfs_fonts.js') }}"></script>
+<script src="{{ asset('plugins/jquery-datatable/extensions/export/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('plugins/jquery-datatable/extensions/export/buttons.print.min.js') }}"></script>
 
 <!-- Custom Js -->
 <script src="{{ asset('js/admin.js') }}"></script>
-<script src="{{ asset('js/pages/tables/jquery-datatable.js')}}"></script>
-{{--<script src="{{ asset('js/pages/index.js') }}"></script>--}}
-
+<script src="{{ asset('js/pages/tables/jquery-datatable.js') }}"></script>
 <!-- Demo Js -->
 <script src="{{ asset('js/demo.js') }}"></script>
-
-
-
-
-
-
 </body>
 
 </html>

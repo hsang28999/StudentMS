@@ -241,4 +241,7 @@
 
         </div>
     </section>
-@stop
+    <script>
+        activeSection("teacher");
+    </script>
+@endsection
