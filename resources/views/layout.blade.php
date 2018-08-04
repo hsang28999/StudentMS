@@ -31,6 +31,8 @@
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{{ asset('css/themes/all-themes.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('css/custom.css')}}">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body class="theme-red">
@@ -107,7 +109,7 @@
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
                 <li id="student">
-                    <a href="index.html">
+                    <a href="{{route('studentMaster')}}">
                         <i class="fas fa-user-graduate" style="font-size: 19px" ></i>
                         <span>Student</span>
                     </a>

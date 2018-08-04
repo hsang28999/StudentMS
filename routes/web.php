@@ -59,3 +59,36 @@ Route::group(['prefix' => 'student'],function (){
         ]);
     });
 });
+
+/*==============Route student=========================*/
+
+Route::group(['prefix' => 'studentMaster'],function (){
+    Route::get('/',[
+        'as' => 'studentMaster',function() {
+            return view('studentMaster.student');
+        }
+    ]);
+});
+
+Route::group(['prefix' => 'StudentAction'],function (){
+    Route::get('',[
+        'as' => 'addStudent',function() {
+            return view('studentAction.addStudent');
+        }
+    ]);
+});
+
+
+Route::group(['prefix' => 'StudentAction'],function (){
+    Route::get('edit',[
+        'as' => 'editStudent',function(){
+            return view('studentAction.editStudent');
+        }
+    ]);
+    Route::get('view',[
+        'as' => 'viewStudent',function() {
+            return view('studentAction.viewStudent');
+        }
+    ]);
+});
+
