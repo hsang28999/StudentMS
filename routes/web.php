@@ -12,7 +12,7 @@
 */
 
 Route::get('/',[
-    'as' => 'student', function () {
+    'as' => 'index', function () {
         return view('layout');
     }
 ]);
@@ -31,16 +31,16 @@ Route::group(['prefix' => 'teacher'],function (){
 
 
 
-Route::group(['prefix' => 'student'],function (){
+Route::group(['prefix' => 'academic'],function (){
     Route::group(['prefix' => 'class'],function (){
         Route::get('',[
             'as' => 'class',function() {
-                return view('student.class');
+                return view('academic.class');
             }
         ]);
         Route::get('create',[
             'as' => 'createClass',function(){
-                return view('student.addClass');
+                return view('academic.addClass');
             }
         ]);
     });
@@ -49,12 +49,12 @@ Route::group(['prefix' => 'student'],function (){
     Route::group(['prefix' => 'subject'],function (){
         Route::get('create',[
             'as' => 'createSubject',function(){
-                return view('student.addSubject');
+                return view('academic.addSubject');
             }
         ]);
         Route::get('',[
             'as' => 'subject',function() {
-                return view('student.subject');
+                return view('academic.subject');
             }
         ]);
     });
