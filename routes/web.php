@@ -59,3 +59,29 @@ Route::group(['prefix' => 'academic'],function (){
         ]);
     });
 });
+
+
+/*==============Route student=========================*/
+
+Route::group(['prefix' => 'student'],function (){
+    Route::get('/',[
+        'as' => 'student',function() {
+            return view('student.student');
+        }
+    ]);
+    Route::get('/add',[
+        'as' => 'addStudent',function() {
+            return view('student.addStudent');
+        }
+    ]);
+    Route::get('/edit',[
+        'as' => 'editStudent',function(){
+            return view('student.editStudent');
+        }
+    ]);
+    Route::get('/view',[
+        'as' => 'viewStudent',function() {
+            return view('student.viewStudent');
+        }
+    ]);
+});
