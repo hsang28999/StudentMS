@@ -1,5 +1,6 @@
 @extends('layout')
 @section('section')
+
 <section class="content">
     <div class="container-fluid">
         <!-- Exportable Table -->

@@ -31,6 +31,9 @@
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{{ asset('css/themes/all-themes.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('css/custom.css')}}">
+
+    <!-- Bootstrap Select Css -->
+    <link href="{{asset('plugins/bootstrap-select/css/bootstrap-select.css')}}" rel="stylesheet" />
 </head>
 
 <body class="theme-red">
@@ -159,7 +162,7 @@
                     </ul>
                 </li>
                 <li id="mark">
-                    <a href="#">
+                    <a href="{{route('mark')}}">
                         <i class="fas fa-clipboard-check" style="font-size: 19px"></i>
                         <span>Mark</span>
                     </a>
