@@ -274,18 +274,8 @@
     <!-- #END# Right Sidebar -->
 </section>
 <!-- #END# Right Sidebar -->
-<script>
-    function activeSection(id1,id2) {
-        var element1 = document.getElementById(id1);
-        element1.classList.add("active");
-        if(id2 != "null") {
-            var element2 = document.getElementById(id2);
-            element2.classList.add("active");
-        }
-    };
-</script>
+<script src="{{ asset('js/custom.js') }}"></script>
 @yield("section")
-
 <!-- Jquery Core Js -->
 <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
 
@@ -317,6 +307,7 @@
 <script src="{{ asset('js/pages/tables/jquery-datatable.js') }}"></script>
 <!-- Demo Js -->
 <script src="{{ asset('js/demo.js') }}"></script>
+<script src="{{ asset('js/init.js') }}"></script>
 </body>
 
 </html>

@@ -8,16 +8,7 @@
                 <div class="card">
                     <div class="header">
                         <ol class="breadcrumb pull-right m-t--15">
-                            <li>
-                                <a href="javascript:void(0);">
-                                    <i class="fas fa-briefcase"></i> Teacher
-                                </a>
-                            </li>
-                            <li class="active">
-                                <a href="javascript:void(0);">
-                                    <i class="material-icons">remove_red_eye</i> View
-                                </a>
-                            </li>
+
                         </ol>
                         <h2 style="display: inline">
                             TEACHER DETAIL
@@ -70,6 +61,6 @@
 </section>
 
 <script>
-    activeSection("teacher");
+    activeSection("teacher","null");
 </script>
 @endsection
