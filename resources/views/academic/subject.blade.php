@@ -13,10 +13,8 @@
                                     <i class="fas fa-briefcase"></i> Teacher
                                 </a>
                             </li>
-                            <li class="active">
-                                <a href="javascript:void(0);">
-                                    <i class="material-icons">remove_red_eye</i> View
-                                </a>
+                            <li lass="active">
+
                             </li>
                         </ol>
                         <h2 style="display: inline">
@@ -31,9 +29,9 @@
                             </a>
 
                             <select class=" show-tick pull-right" >
-                                <option>Mustard</option>
-                                <option>Ketchup</option>
-                                <option>Relish</option>
+                                <option>One</option>
+                                <option>Two</option>
+                                <option>Three</option>
                             </select>
                         </div>
 
@@ -66,9 +64,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -89,9 +84,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -112,9 +104,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -135,9 +124,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -158,9 +144,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -181,9 +164,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -204,9 +184,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -227,9 +204,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -250,9 +224,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -273,9 +244,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -296,9 +264,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -319,9 +284,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -342,9 +304,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
