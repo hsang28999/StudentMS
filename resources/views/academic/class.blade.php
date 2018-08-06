@@ -13,10 +13,8 @@
                                     <i class="fas fa-briefcase"></i> Teacher
                                 </a>
                             </li>
-                            <li class="active">
-                                <a href="javascript:void(0);">
-                                    <i class="material-icons">remove_red_eye</i> View
-                                </a>
+                            <li lass="active">
+
                             </li>
                         </ol>
                         <h2 style="display: inline">
@@ -47,9 +45,6 @@
                                     <td>Dipok Kumar Halder</td>
                                     <td></td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -65,9 +60,6 @@
                                     <td>Dipok Kumar Halder</td>
                                     <td></td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -83,9 +75,6 @@
                                     <td>Dipok Kumar Halder</td>
                                     <td></td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -101,9 +90,6 @@
                                     <td>Dipok Kumar Halder</td>
                                     <td></td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -119,9 +105,6 @@
                                     <td>Dipok Kumar Halder</td>
                                     <td></td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -137,9 +120,6 @@
                                     <td>Dipok Kumar Halder</td>
                                     <td></td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -155,9 +135,6 @@
                                     <td>Dipok Kumar Halder</td>
                                     <td></td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -173,9 +150,6 @@
                                     <td>Dipok Kumar Halder</td>
                                     <td></td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -191,9 +165,6 @@
                                     <td>Dipok Kumar Halder</td>
                                     <td></td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -209,9 +180,6 @@
                                     <td>Dipok Kumar Halder</td>
                                     <td></td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -227,9 +195,6 @@
                                     <td>Dipok Kumar Halder</td>
                                     <td></td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -245,9 +210,6 @@
                                     <td>Dipok Kumar Halder</td>
                                     <td></td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -263,9 +225,6 @@
                                     <td>Dipok Kumar Halder</td>
                                     <td></td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
