@@ -20,44 +20,33 @@
                                 </li>
                             </ol>
                             <h2>
-                                ADD A MARK
+                                ADD CLASS
                             </h2>
                         </div>
                         <div class="body">
                             <form>
-                                <div class="form-float col-md-3">
-                                    <label for="">Exam</label>
-                                    <select class="form-control show-tick" >
-                                        <option>Mustard</option>
-                                        <option>Ketchup</option>
-                                        <option>Relish</option>
-                                    </select>
-                                </div>
-                                <div class="form-float col-md-3">
-                                    <label for="">Class</label>
-                                    <select class="form-control show-tick" >
-                                        <option>Mustard</option>
-                                        <option>Ketchup</option>
-                                        <option>Relish</option>
-                                    </select>
-                                </div>
-                                <div class="form-float col-md-3">
-                                    <label for="">Section</label>
-                                    <select class="form-control show-tick" >
-                                        <option>Mustard</option>
-                                        <option>Ketchup</option>
-                                        <option>Relish</option>
-                                    </select>
-                                </div>
-                                <div class="form-float col-md-3">
-                                    <label for="">Subject</label>
-                                    <select class="form-control show-tick" >
-                                        <option>Mustard</option>
-                                        <option>Ketchup</option>
-                                        <option>Relish</option>
-                                    </select>
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input type="text" id="" class="form-control">
+                                        <label class="form-label">Class</label>
+                                    </div>
                                 </div>
 
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input type="text" id="" class="form-control">
+                                        <label class="form-label">Class Numberic</label>
+                                    </div>
+                                </div>
+                                <div class="form-group form-float">
+                                    <label for="">Teacher Name</label>
+                                    <select class="form-control show-tick" >
+                                        <option>Mustard</option>
+                                        <option>Ketchup</option>
+                                        <option>Relish</option>
+                                    </select>
+                                </div>
+                                <br>
                                 <button type="button" class="btn btn-primary m-t-15 waves-effect">ADD</button>
                             </form>
                         </div>
@@ -67,6 +56,6 @@
         </div>
     </section>
     <script>
-        activeSection("mark","mark_Mark");
+        activeSection("academic","academic_Class");
     </script>
 @endsection

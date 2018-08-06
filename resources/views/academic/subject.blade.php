@@ -25,9 +25,19 @@
 
                     </div>
                     <div class="body">
-                        <a href="{{route('createSubject')}}">
-                            <button class="btn btn-success">ADD SUBJECT</button>
-                        </a>
+                        <div class="form-float" style="height: 35px;">
+                            <a href="{{route('createSubject')}}">
+                                <button class="btn btn-success">ADD SUBJECT</button>
+                            </a>
+
+                            <select class=" show-tick pull-right" >
+                                <option>Mustard</option>
+                                <option>Ketchup</option>
+                                <option>Relish</option>
+                            </select>
+                        </div>
+
+
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped table-hover dataTable ">
                                 <thead>

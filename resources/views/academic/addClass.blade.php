@@ -147,6 +147,6 @@
         </div>
     </section>
     <script>
-        activeSection("teacher");
+        activeSection("academic","academic_class");
     </script>
 @endsection

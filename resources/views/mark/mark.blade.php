@@ -24,10 +24,17 @@
                             </h2>
                         </div>
                         <div class="body">
-                            <a href="{{route('addMark')}}">
-                                <button class="btn btn-success">ADD MARK</button>
-                            </a>
-                            <br>
+                            <div class="form-float" >
+                                <a href="{{route('createSubject')}}">
+                                    <button class="btn btn-success">ADD SUBJECT</button>
+                                </a>
+
+                                <select class=" show-tick pull-right" >
+                                    <option>One</option>
+                                    <option>Two</option>
+                                    <option>Three</option>
+                                </select>
+                            </div>
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs tab-nav-right" role="tablist">
                                 <li role="presentation" class="active"><a href="#home" data-toggle="tab">HOME</a></li>
