@@ -8,14 +8,6 @@
                 <div class="card">
                     <div class="header">
                         <ol class="breadcrumb pull-right m-t--15">
-                            <li>
-                                <a href="javascript:void(0);">
-                                    <i class="fas fa-briefcase"></i> Teacher
-                                </a>
-                            </li>
-                            <li lass="active">
-
-                            </li>
                         </ol>
                         <h2 style="display: inline">
                             TEACHER DETAIL
