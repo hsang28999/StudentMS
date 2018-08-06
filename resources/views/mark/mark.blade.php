@@ -22,11 +22,12 @@
                             <h2>
                                 MARK
                             </h2>
-                            <a href="{{route('createClass')}}">
-                                <button class="btn btn-success">ADD CLASS</button>
-                            </a>
                         </div>
                         <div class="body">
+                            <a href="{{route('addMark')}}">
+                                <button class="btn btn-success">ADD MARK</button>
+                            </a>
+                            <br>
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs tab-nav-right" role="tablist">
                                 <li role="presentation" class="active"><a href="#home" data-toggle="tab">HOME</a></li>

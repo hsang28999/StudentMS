@@ -61,11 +61,11 @@ Route::group(['prefix' => 'academic'],function (){
 });
 
 Route::group(['prefix'=> 'mark'],function(){
-    Route::get('',function (){
+    Route::get('',['as' => 'mark',function (){
         return view('mark.mark');
-    });
-    Route::get('create',function (){
+    }]);
+    Route::get('create',['as' => 'addMark',function (){
         return view('mark.addmark');
-    });
+    }]);
 });
 

@@ -162,7 +162,7 @@
                     </ul>
                 </li>
                 <li id="mark">
-                    <a href="#">
+                    <a href="{{route('mark')}}">
                         <i class="fas fa-clipboard-check" style="font-size: 19px"></i>
                         <span>Mark</span>
                     </a>
