@@ -59,3 +59,13 @@ Route::group(['prefix' => 'academic'],function (){
         ]);
     });
 });
+
+Route::group(['prefix'=> 'mark'],function(){
+    Route::get('',function (){
+        return view('mark.mark');
+    });
+    Route::get('create',function (){
+        return view('mark.addmark');
+    });
+});
+
