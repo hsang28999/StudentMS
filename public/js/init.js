@@ -26,7 +26,6 @@ function generateBreadcrumbs() {
     var section2 =section1 + "_" + arr[4];
     var section3 = arr[5];
     var content ="";
-    console.log(breadcrumb);
     if (section1 != undefined){
         content += generateBreadcrumb(section1);
         if (section2 != undefined){
