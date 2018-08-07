@@ -27,6 +27,11 @@ Route::group(['prefix' => 'teacher'],function (){
             return view('teacher.teacher_detail');
         }
     ]);
+    Route::get('/add',[
+        'as' => 'addTeacher',function(){
+            return view('teacher.addTeacher');
+        }
+    ]);
 });
 
 
