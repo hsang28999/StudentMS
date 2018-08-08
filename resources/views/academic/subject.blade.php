@@ -13,10 +13,8 @@
                                     <i class="fas fa-briefcase"></i> Teacher
                                 </a>
                             </li>
-                            <li class="active">
-                                <a href="javascript:void(0);">
-                                    <i class="material-icons">remove_red_eye</i> View
-                                </a>
+                            <li lass="active">
+
                             </li>
                         </ol>
                         <h2 style="display: inline">
@@ -25,9 +23,19 @@
 
                     </div>
                     <div class="body">
-                        <a href="{{route('createSubject')}}">
-                            <button class="btn btn-success">ADD SUBJECT</button>
-                        </a>
+                        <div class="form-float" style="height: 35px;">
+                            <a href="{{route('createSubject')}}">
+                                <button class="btn btn-success">ADD SUBJECT</button>
+                            </a>
+
+                            <select class=" show-tick pull-right" >
+                                <option>One</option>
+                                <option>Two</option>
+                                <option>Three</option>
+                            </select>
+                        </div>
+
+
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped table-hover dataTable ">
                                 <thead>
@@ -56,9 +64,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -79,9 +84,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -102,9 +104,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -125,9 +124,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -148,9 +144,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -171,9 +164,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -194,9 +184,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -217,9 +204,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -240,9 +224,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -263,9 +244,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -286,9 +264,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -309,9 +284,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
@@ -332,9 +304,6 @@
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-light-green waves-effect ">
-                                            <i class="material-icons">remove_red_eye</i>
-                                        </a>
                                         <a href="#" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
