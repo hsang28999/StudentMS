@@ -31,6 +31,9 @@
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{{ asset('css/themes/all-themes.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('css/custom.css')}}">
+
+    <!-- Bootstrap Select Css -->
+    <link href="{{asset('plugins/bootstrap-select/css/bootstrap-select.css')}}" rel="stylesheet" />
 </head>
 
 <body class="theme-red">
@@ -107,7 +110,7 @@
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
                 <li id="student">
-                    <a href="index.html">
+                    <a href="{{route('student')}}">
                         <i class="fas fa-user-graduate" style="font-size: 19px" ></i>
                         <span>Student</span>
                     </a>
@@ -159,7 +162,7 @@
                     </ul>
                 </li>
                 <li id="mark">
-                    <a href="#">
+                    <a href="{{route('mark')}}">
                         <i class="fas fa-clipboard-check" style="font-size: 19px"></i>
                         <span>Mark</span>
                     </a>
@@ -274,18 +277,8 @@
     <!-- #END# Right Sidebar -->
 </section>
 <!-- #END# Right Sidebar -->
-<script>
-    function activeSection(id1,id2) {
-        var element1 = document.getElementById(id1);
-        element1.classList.add("active");
-        if(id2 != "null") {
-            var element2 = document.getElementById(id2);
-            element2.classList.add("active");
-        }
-    };
-</script>
+<script src="{{ asset('js/custom.js') }}"></script>
 @yield("section")
-
 <!-- Jquery Core Js -->
 <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
 
@@ -317,6 +310,7 @@
 <script src="{{ asset('js/pages/tables/jquery-datatable.js') }}"></script>
 <!-- Demo Js -->
 <script src="{{ asset('js/demo.js') }}"></script>
+<script src="{{ asset('js/init.js') }}"></script>
 </body>
 
 </html>

@@ -27,6 +27,11 @@ Route::group(['prefix' => 'teacher'],function (){
             return view('teacher.teacher_detail');
         }
     ]);
+    Route::get('/add',[
+        'as' => 'addTeacher',function(){
+            return view('teacher.addTeacher');
+        }
+    ]);
 });
 
 
@@ -43,6 +48,11 @@ Route::group(['prefix' => 'academic'],function (){
                 return view('academic.addClass');
             }
         ]);
+        Route::get('edit/{id}',[
+            'as' => 'editClass',function(){
+                return view('academic.editClass');
+            }
+        ]);
     });
 
 
@@ -57,5 +67,48 @@ Route::group(['prefix' => 'academic'],function (){
                 return view('academic.subject');
             }
         ]);
+        Route::get('edit/{id}',[
+            'as' => 'editSubject',function(){
+                return view('academic.editSubject');
+            }
+        ]);
     });
 });
+
+Route::group(['prefix'=> 'mark'],function(){
+    Route::get('',['as' => 'mark',function (){
+        return view('mark.mark');
+    }]);
+    Route::get('create',['as' => 'addMark',function (){
+        return view('mark.addmark');
+    }]);
+    Route::get('view',['as' => 'viewMark',function (){
+        return view('mark.mark_detail');
+    }]);
+});
+
+/*==============Route student=========================*/
+
+Route::group(['prefix' => 'student'],function (){
+    Route::get('/',[
+        'as' => 'student',function() {
+            return view('student.student');
+        }
+    ]);
+    Route::get('/add',[
+        'as' => 'addStudent',function() {
+            return view('student.addStudent');
+        }
+    ]);
+    Route::get('/edit',[
+        'as' => 'editStudent',function(){
+            return view('student.editStudent');
+        }
+    ]);
+    Route::get('/view',[
+        'as' => 'viewStudent',function() {
+            return view('student.viewStudent');
+        }
+    ]);
+});
+
