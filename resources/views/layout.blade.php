@@ -110,7 +110,7 @@
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
                 <li id="student">
-                    <a href="index.html">
+                    <a href="{{route('student')}}">
                         <i class="fas fa-user-graduate" style="font-size: 19px" ></i>
                         <span>Student</span>
                     </a>
