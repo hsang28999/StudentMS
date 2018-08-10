@@ -2,20 +2,15 @@
 @section('section')
 <section class="content">
         <div class="container-fluid">
-            <div class="bc-icons-2">
-                <ol class="breadcrumb indigo lighten-4">
-                    <li class="breadcrumb-item"><a class="black-text" href="../../index.html">Home</a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item active"><a class="black-text" href="#">Student</a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>                  
-                </ol>
-            </div>
+            
             <!-- Basic Examples -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
                             <h2>
-                                <a href="{{route('addStudent')}}"><i class="material-icons">add</i>
-                                    <span>Add Student</span>
+                                <a href="{{route('addStudent')}}">
+                                    <button class="btn btn-success">ADD STUDENT</button>
                                 </a>
                             </h2>
                             <ul class="header-dropdown m-r--5">
@@ -55,9 +50,9 @@
                                             <td>T1707A</td>
                                             <td>ABC@gmail.com</td>
                                             <td>                                        
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" style="border-radius: 10px; background: #00acac;"><a href="{{route('viewStudent')}}"><i class="material-icons" style="color: white;">done</i></a></button>
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="Edit" style="border-radius: 10px; background-color: #f59c1a"><a href="{{route('editStudent')}}"><i class="material-icons" style="color: white;">edit</i></a></button>
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="Delete" style="border-radius: 10px; background-color: #ff5b57"><i class="material-icons" style="color: white;">delete</i></button>      
+                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('viewStudent')}}"><i class="material-icons">remove_red_eye</i></a></button>
+                                                <button type="button" data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-small bg-lime waves-effect "><a href="{{route('editStudent')}}"><i class="material-icons">edit</i></a></button>
+                                                <button type="button" data-toggle="tooltip" data-placement="top" title="Delete" class="btn btn-small bg-red waves-effect"><i class="material-icons" style="color: white;">delete</i></button>      
                                             </td>
                                         </tr>
                                         <tr>
@@ -66,9 +61,9 @@
                                             <td>T1707A</td>
                                             <td>ABC@gmail.com</td>
                                             <td>                                        
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" style="border-radius: 10px; background: #00acac;"><a href="{{route('viewStudent')}}"><i class="material-icons" style="color: white;">done</i></a></button>
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="Edit" style="border-radius: 10px; background-color: #f59c1a"><a href="{{route('editStudent')}}"><i class="material-icons" style="color: white;">edit</i></a></button>
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="Delete" style="border-radius: 10px; background-color: #ff5b57"><i class="material-icons" style="color: white;">delete</i></button>      
+                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('viewStudent')}}"><i class="material-icons">remove_red_eye</i></a></button>
+                                                <button type="button" data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-small bg-lime waves-effect "><a href="{{route('editStudent')}}"><i class="material-icons">edit</i></a></button>
+                                                <button type="button" data-toggle="tooltip" data-placement="top" title="Delete" class="btn btn-small bg-red waves-effect"><i class="material-icons" style="color: white;">delete</i></button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -77,9 +72,9 @@
                                             <td>T1707A</td>
                                             <td>ABC@gmail.com</td>
                                             <td>                                        
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" style="border-radius: 10px; background: #00acac;"><a href="{{route('viewStudent')}}"><i class="material-icons" style="color: white;">done</i></a></button>
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="Edit" style="border-radius: 10px; background-color: #f59c1a"><a href="{{route('editStudent')}}"><i class="material-icons" style="color: white;">edit</i></a></button>
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="Delete" style="border-radius: 10px; background-color: #ff5b57"><i class="material-icons" style="color: white;">delete</i></button>      
+                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('viewStudent')}}"><i class="material-icons">remove_red_eye</i></a></button>
+                                                <button type="button" data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-small bg-lime waves-effect "><a href="{{route('editStudent')}}"><i class="material-icons">edit</i></a></button>
+                                                <button type="button" data-toggle="tooltip" data-placement="top" title="Delete" class="btn btn-small bg-red waves-effect"><i class="material-icons" style="color: white;">delete</i></button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -88,9 +83,9 @@
                                             <td>T1707A</td>
                                             <td>ABC@gmail.com</td>
                                             <td>                                        
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" style="border-radius: 10px; background: #00acac;"><a href="{{route('viewStudent')}}"><i class="material-icons" style="color: white;">done</i></a></button>
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="Edit" style="border-radius: 10px; background-color: #f59c1a"><a href="{{route('editStudent')}}"><i class="material-icons" style="color: white;">edit</i></a></button>
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="Delete" style="border-radius: 10px; background-color: #ff5b57"><i class="material-icons" style="color: white;">delete</i></button>      
+                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('viewStudent')}}"><i class="material-icons">remove_red_eye</i></a></button>
+                                                <button type="button" data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-small bg-lime waves-effect "><a href="{{route('editStudent')}}"><i class="material-icons">edit</i></a></button>
+                                                <button type="button" data-toggle="tooltip" data-placement="top" title="Delete" class="btn btn-small bg-red waves-effect"><i class="material-icons" style="color: white;">delete</i></button>
                                             </td>
                                         </tr>
                                     </tbody>

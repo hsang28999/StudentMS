@@ -87,7 +87,7 @@ Route::group(['prefix'=> 'mark'],function(){
     }]);
 });
 
-/*==============Route student=========================*/
+/*==============ROUTE STUDENT=========================*/
 
 Route::group(['prefix' => 'student'],function (){
     Route::get('/',[
@@ -110,5 +110,48 @@ Route::group(['prefix' => 'student'],function (){
             return view('student.viewStudent');
         }
     ]);
+});
+
+
+/*==================ROUTE ATTENDANCE==============================*/
+
+Route::group(['prefix' => 'attendance'],function (){
+
+    Route::group(['prefix' => 'student_attendance'],function (){
+        Route::get('',[
+            'as' => 'student_attendance',function() {
+                return view('attendance.studentAttendance');
+            }
+        ]);
+        Route::get('create',[
+            'as' => 'add_student_attendance',function(){
+                return view('attendance.addStudentAttendance');
+            }
+        ]);
+        Route::get('view',[
+            'as' => 'view_student_attendance',function(){
+                return view('attendance.viewStudentAttendance');
+            }
+        ]);
+    });
+
+
+    Route::group(['prefix' => 'teacher_attendance'],function (){
+        Route::get('',[
+            'as' => 'teacher_attendance',function() {
+                return view('attendance.teacherAttendance');
+            }
+        ]);
+        Route::get('create',[
+            'as' => 'add_teacher_attendance',function(){
+                return view('attendance.addTeacherAttendance');
+            }
+        ]);
+        Route::get('view',[
+            'as' => 'view_teacher_attendance',function(){
+                return view('attendance.viewTeacherAttendance');
+            }
+        ]);
+    });
 });
 
