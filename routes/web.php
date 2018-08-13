@@ -155,3 +155,31 @@ Route::group(['prefix' => 'attendance'],function (){
     });
 });
 
+//Authentication
+Route::group(['prefix' => 'auth'],function(){
+    Route::get('login',[
+        'as' => 'auth.login', function(){
+            return view('auth.login');
+        }
+    ]);
+    Route::get('forgot',[
+        'as' => 'forgot-password', function(){
+            return view('auth.forgot-password');
+        }
+    ]);
+
+   Route::get('register',[
+       'as' => 'registerPage', function(){
+            return view('auth.register');
+        }
+   ]);
+    Route::post('login',['as' => 'login','uses' => 'Auth\LoginController@login']);
+    Route::post('logout' ,['as' => 'logout','uses' => 'Auth\LoginController@logout']);
+    Route::post('register' ,['as' => 'register','uses' => 'Auth\RegisterController@register']);
+
+});
+
+
+//Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
