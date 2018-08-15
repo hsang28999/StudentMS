@@ -30,3 +30,22 @@
     font-size: 17px;
     width: 20px;
 }
+.margin-bot-10{
+    margin-bottom: 10px;
+}
+.margin-bot-5{
+    margin-bottom: 5px;
+}
+#submitSelectDay{
+    padding: 10px 20px;
+    font-size: 18px;
+}
+#timeTable .btn-group.bootstrap-select.select-beast.selectized{
+    display: none;
+}
+.margin-top-10{
+    margin-top: 10px;
+}
+.float-left{
+    float: left !important;
+}

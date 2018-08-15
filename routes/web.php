@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\Controller;
 
 Route::get('/',[
     'as' => 'index', function () {
@@ -153,5 +154,24 @@ Route::group(['prefix' => 'attendance'],function (){
             }
         ]);
     });
+});
+
+Route::group(['prefix' => 'timeTable'],function (){
+    Route::get('/',[
+        'as' => 'timeTable',function() {
+            return view('timeTable.timeTable');
+        }
+    ]);
+    Route::post('/','TimeTableController@saveTimeTableToDb');
+    Route::get('/view',[
+        'as' => 'viewTimeTable',function(){
+            return view('timeTable.timeTable_detail');
+        }
+    ]);
+    Route::get('/add',[
+        'as' => 'addTimeTable',function(){
+            return view('timeTable.addTimeTable');
+        }
+    ]);
 });
 
