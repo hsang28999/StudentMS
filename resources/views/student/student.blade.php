@@ -48,8 +48,8 @@
                                             <td>{{$item -> classes_classId}}</td>
                                             <td>{{$item -> email}}</td>
                                             <td>                                        
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('viewStudent')}}"><i class="material-icons">remove_red_eye</i></a></button>
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-small bg-lime waves-effect "><a href="{{route('editStudent')}}"><i class="material-icons">edit</i></a></button>
+                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('student')}}/view/{{$item -> studentId}}"><i class="material-icons">remove_red_eye</i></a></button>
+                                                <button type="button" data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-small bg-lime waves-effect "><a href="{{route('student')}}/edit/{{$item -> studentId}}"><i class="material-icons">edit</i></a></button>
                                                 <button type="button" data-toggle="tooltip" data-placement="top" title="Delete" class="btn btn-small bg-red waves-effect"><i class="material-icons" style="color: white;">delete</i></button>      
                                             </td>
                                         </tr>

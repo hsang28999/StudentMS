@@ -105,16 +105,15 @@ Route::group(['prefix' => 'student'],function (){
     ]);
     Route::post('/add',['as' => 'addStudent',
                         'uses' => 'StudentController@store']);
-    Route::get('/edit',[
-        'as' => 'editStudent',function(){
-            return view('student.editStudent');
-        }
+    Route::get('/edit/{id}',[
+        'as' => 'editStudent',
+        'uses' => 'StudentController@edit'
     ]);
-    Route::get('/view',[
-        'as' => 'viewStudent',function() {
-            return view('student.viewStudent');
-        }
+    Route::get('/view/{id}',[
+        'as' => 'viewStudent',
+        'uses' => 'StudentController@viewStudent'
     ]);
+
 });
 
 

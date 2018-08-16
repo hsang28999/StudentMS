@@ -41,4 +41,12 @@ class StudentController extends Controller
         $class = Classes::all();
         return view('student.addStudent') -> with('class',$class);
     }
+    public function viewStudent($id){
+        $student = Student::where('studentId',$id) -> get();
+        return view('student.viewStudent') -> with('student',$student);
+    }
+    public function edit($id){
+        $student = Student::where('studentId',$id) -> get();
+        return view('student.viewStudent') -> with('student',$student);
+    }
 }
