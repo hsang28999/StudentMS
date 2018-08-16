@@ -92,15 +92,19 @@ Route::group(['prefix'=> 'mark'],function(){
 
 Route::group(['prefix' => 'student'],function (){
     Route::get('/',[
-        'as' => 'student',function() {
-            return view('student.student');
-        }
+        'as' => 'student',
+        'uses' => 'StudentController@index'
+    ]);
+    Route::get('class/{id}',[
+        'as' => 'studentByClass',
+        'uses' => 'StudentController@searchStudentByClass'
     ]);
     Route::get('/add',[
-        'as' => 'addStudent',function() {
-            return view('student.addStudent');
-        }
+        'as' => 'addStudent',
+        'uses' => 'StudentController@add'
     ]);
+    Route::post('/add',['as' => 'addStudent',
+                        'uses' => 'StudentController@store']);
     Route::get('/edit',[
         'as' => 'editStudent',function(){
             return view('student.editStudent');
