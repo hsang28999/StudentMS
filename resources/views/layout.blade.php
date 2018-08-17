@@ -38,6 +38,7 @@
 
     <!-- Bootstrap Select Css -->
     <link href="{{asset('plugins/bootstrap-select/css/bootstrap-select.css')}}" rel="stylesheet" />
+    <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
 </head>
 
 <body class="theme-red">

@@ -64,12 +64,10 @@ class StudentController extends Controller
             'studentCode' => Input::get('studentCode'),
             'email' => Input::get('email')
         ]);
-//        dd($student);
-
-
-
-
-
+        return redirect() -> route('student');
+    }
+    public function delete($id){
+        $student = Student::where('studentId',$id) -> delete();
         return redirect() -> route('student');
     }
 }

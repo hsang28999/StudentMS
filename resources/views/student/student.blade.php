@@ -31,6 +31,7 @@
                         <div class="body">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+
                                     <thead>
                                         <tr>
                                             <th>ID</th>
@@ -50,9 +51,26 @@
                                             <td>                                        
                                                 <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('student')}}/view/{{$item -> studentId}}"><i class="material-icons">remove_red_eye</i></a></button>
                                                 <button type="button" data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-small bg-lime waves-effect "><a href="{{route('student')}}/edit/{{$item -> studentId}}"><i class="material-icons">edit</i></a></button>
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="Delete" class="btn btn-small bg-red waves-effect"><i class="material-icons" style="color: white;">delete</i></button>      
+                                                <button type="button" data-toggle="tooltip" data-placement="top" title="Delete" class="btn btn-small bg-red waves-effect"><i class="material-icons" style="color: white;" data-toggle="modal" data-target="#{{$item -> studentId}}">delete</i></button>
                                             </td>
                                         </tr>
+                                        <form action="" METHOD="POST">
+                                            @csrf
+                                            <div class="modal fade" id="{{$item -> studentId}}" tabindex="-1" role="dialog">
+                                                <input type="hidden" name="studentId" value="{{$item -> studentId}}">
+                                                <div class="modal-dialog  modal-sm" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body">
+                                                            Are you sure to delete this!!!
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-link waves-effect deleteBtn" id="{{$item -> studentId}}">Delete</button>
+                                                            <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -62,12 +80,13 @@
                 </div>
             </div>
             <!-- #END# Basic Examples -->
-            
-            <!-- #END# Exportable Table -->
+
+
         </div>
     </section>
 <script type="text/javascript">
 	activeSection("student", "null");
 </script>
+<script src="{{asset('js/student.js')}}"></script>
 
 @endsection
