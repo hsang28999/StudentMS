@@ -8,7 +8,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                <a href="{{route('add_student_attendance')}}">
+                                <a href="{{route('add_attendance_student')}}">
                                     <button class="btn btn-success">ADD STUDENT ATTENDANCE</button>
                                 </a>
                             </h2>
@@ -42,25 +42,25 @@
                                             <td>T1707A</td>
                                             <td>ABC@gmail.com</td>
                                             <td>
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('view_student_attendance')}}"><i class="material-icons">remove_red_eye</i></a></button>
+                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('view_attendance_student')}}"><i class="material-icons">remove_red_eye</i></a></button>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>2</td>                                           
+                                            <td>2</td>
                                             <td>Diana Rejex</td>
                                             <td>T1707A</td>
                                             <td>ABC@gmail.com</td>
                                             <td>
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('view_student_attendance')}}"><i class="material-icons">remove_red_eye</i></a></button>
+                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('view_attendance_student')}}"><i class="material-icons">remove_red_eye</i></a></button>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>3</td>                                           
+                                            <td>3</td>
                                             <td>Alex Panther</td>
                                             <td>T1707A</td>
                                             <td>ABC@gmail.com</td>
                                             <td>
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('view_student_attendance')}}"><i class="material-icons">remove_red_eye</i></a></button>
+                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('view_attendance_student')}}"><i class="material-icons">remove_red_eye</i></a></button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -69,7 +69,7 @@
                                             <td>T1707A</td>
                                             <td>ABC@gmail.com</td>
                                             <td>
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('view_student_attendance')}}"><i class="material-icons">remove_red_eye</i></a></button>
+                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('view_attendance_student')}}"><i class="material-icons">remove_red_eye</i></a></button>
                                             </td>
                                         </tr>
                                     </tbody>
