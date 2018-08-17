@@ -46,7 +46,30 @@ class StudentController extends Controller
         return view('student.viewStudent') -> with('student',$student);
     }
     public function edit($id){
-        $student = Student::where('studentId',$id) -> get();
-        return view('student.viewStudent') -> with('student',$student);
+        $class = Classes::all();
+        $student = Student::where('studentId',$id)->first();
+        return view('student.editStudent') -> with('class',$class)
+                                        -> with('student',$student);
+    }
+    public function update($id){
+
+        $student = Student::where('studentId',$id)
+        ->update([
+            'studentName' => Input::get('name'),
+            'phoneNumber' => Input::get('phone'),
+            'classes_classId' => Input::get('studentClass'),
+            'address' => Input::get('address'),
+            'gender' => Input::get('gender'),
+            'dateOfBirth' => Input::get('birthday'),
+            'studentCode' => Input::get('studentCode'),
+            'email' => Input::get('email')
+        ]);
+//        dd($student);
+
+
+
+
+
+        return redirect() -> route('student');
     }
 }

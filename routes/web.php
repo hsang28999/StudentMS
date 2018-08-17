@@ -109,6 +109,10 @@ Route::group(['prefix' => 'student'],function (){
         'as' => 'editStudent',
         'uses' => 'StudentController@edit'
     ]);
+    Route::post('/edit/{id}',[
+        'as' => 'updateStudent',
+        'uses' => 'StudentController@update'
+    ]);
     Route::get('/view/{id}',[
         'as' => 'viewStudent',
         'uses' => 'StudentController@viewStudent'
