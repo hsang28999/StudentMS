@@ -38,6 +38,7 @@
 
     <!-- Bootstrap Select Css -->
     <link href="{{asset('plugins/bootstrap-select/css/bootstrap-select.css')}}" rel="stylesheet" />
+    <link href="{{asset('plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css')}}" rel="stylesheet" />
 </head>
 
 <body class="theme-red">
@@ -315,6 +316,9 @@
 <script src="{{ asset('plugins/jquery-datatable/extensions/export/buttons.html5.min.js') }}"></script>
 <script src="{{ asset('plugins/jquery-datatable/extensions/export/buttons.print.min.js') }}"></script>
 <script src="{{ asset('plugins/jquery-inputmask/jquery.inputmask.bundle.js')}}"></script>
+<script src="{{ asset('plugins/momentjs/moment.js')}}"></script>
+<script src="{{ asset('plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js')}}"></script>
+<!-- <script src="{{ asset('js/pages/forms/basic-form-elements.js')}}"></script> -->
 <!-- Custom Js -->
 <script src="{{ asset('js/admin.js') }}"></script>
 <script src="{{ asset('js/pages/tables/jquery-datatable.js') }}"></script>

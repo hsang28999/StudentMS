@@ -18,24 +18,33 @@ Route::get('/',[
     }
 ]);
 Route::group(['prefix' => 'teacher'],function (){
+
     Route::get('/',[
-        'as' => 'teacher',function() {
-            return view('teacher.teacher');
-        }
+        'as' => 'teacher',
+        'uses' => 'TeacherController@index'
     ]);
-    Route::get('/view',[
-        'as' => 'viewTeacher',function(){
-            return view('teacher.teacher_detail');
-        }
+
+    Route::get('/{teacherId}/view',[
+        'as' => 'viewTeacher',
+        'uses' => 'TeacherController@view'
     ]);
+
+    Route::get('/{teacherId}/edit',[
+        'as' => 'editTeacher',
+        'uses' => 'TeacherController@edit'
+    ]);
+    Route::post('/{teacherId}/update', 'TeacherController@update');
+
     Route::get('/add',[
-        'as' => 'addTeacher',function(){
-            return view('teacher.addTeacher');
-        }
+        'as' => 'addTeacher',
+        'uses' => 'TeacherController@create'
     ]);
+    Route::post('/add','TeacherController@store');
+
+    Route::get('/{teacherId}/delete', 'TeacherController@delete');
 });
 
-
+/*==============================================================*/
 
 Route::group(['prefix' => 'academic'],function (){
     Route::group(['prefix' => 'class'],function (){
@@ -92,25 +101,36 @@ Route::group(['prefix'=> 'mark'],function(){
 
 Route::group(['prefix' => 'student'],function (){
     Route::get('/',[
-        'as' => 'student',function() {
-            return view('student.student');
-        }
+        'as' => 'student',
+        'uses' => 'StudentController@index'
+    ]);
+    Route::get('class/{id}',[
+        'as' => 'studentByClass',
+        'uses' => 'StudentController@searchStudentByClass'
     ]);
     Route::get('/add',[
-        'as' => 'addStudent',function() {
-            return view('student.addStudent');
-        }
+        'as' => 'addStudent',
+        'uses' => 'StudentController@add'
     ]);
-    Route::get('/edit',[
-        'as' => 'editStudent',function(){
-            return view('student.editStudent');
-        }
+    Route::post('/add',['as' => 'addStudent',
+                        'uses' => 'StudentController@store']);
+    Route::get('/edit/{id}',[
+        'as' => 'editStudent',
+        'uses' => 'StudentController@edit'
     ]);
-    Route::get('/view',[
-        'as' => 'viewStudent',function() {
-            return view('student.viewStudent');
-        }
+    Route::post('/edit/{id}',[
+        'as' => 'updateStudent',
+        'uses' => 'StudentController@update'
     ]);
+    Route::get('/view/{id}',[
+        'as' => 'viewStudent',
+        'uses' => 'StudentController@viewStudent'
+    ]);
+    Route::post('/delete/{id}',[
+        'as' => 'deleteStudent',
+        'uses' => 'StudentController@delete'
+    ]);
+
 });
 
 
@@ -155,6 +175,8 @@ Route::group(['prefix' => 'attendance'],function (){
         ]);
     });
 });
+
+
 
 Route::group(['prefix' => 'timeTable'],function (){
     Route::get('/',[

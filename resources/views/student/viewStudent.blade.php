@@ -25,17 +25,17 @@
 	                            <div class="tab-content">
 	                                <div role="tabpanel" class="tab-pane fade in active" id="profile">
 	                                	<div class="col-xs-6">
-	                                		<p>Name: Johnson Crusor</p>
-		                                    <p>Class: T1707A</p>
-		                                    <p>Date of Birth: 01/06/1999</p>
-		                                    <p>Gender: Male</p>
-		                                    <p>Address: Mirpur,Dhaka,Bangladesh</p>
+	                                		<p>Name: {{$student[0] -> studentName}}</p>
+		                                    <p>Class: {{$student[0] -> classes_classId}}</p>
+		                                    <p>Date of Birth: {{$student[0] -> dateOfBirth}}</p>
+		                                    <p>Gender: {{$student[0] -> gender}}</p>
+
 	                                	</div>
 	                                	<div>
-	                                		<p>Phone: 0128 235 5119</p>
-		                                    <p>Country: HaNoi</p>
-		                                    <p>Religion: No</p>
-		                                    <p>Email: abc@gmail.com</p>
+	                                		<p>Phone: {{$student[0] -> phoneNumber}}</p>
+
+		                                    <p>Email: {{$student[0] -> email}}</p>
+											<p>Address: {{$student[0] -> address}}</p>
 	                                	</div>
 	                                </div>
 	                                <div role="tabpanel" class="tab-pane fade" id="attendance1">
