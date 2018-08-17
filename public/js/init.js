@@ -42,9 +42,13 @@ function generateBreadcrumbs() {
 generateBreadcrumbs();
 
 
-var $demoMaskedInput = $('.content');
+var $ddmmyyyy = $('.ddmmyyyy');
 //Date
-$demoMaskedInput.find('.date').inputmask('dd/mm/yyyy', { placeholder: '__/__/____' });
+$ddmmyyyy.find('.date').inputmask('dd/mm/yyyy', { placeholder: '__/__/____' });
+
+var $yyyymmdd = $('.yyyymmdd');
+//Date
+$yyyymmdd.find('.date').inputmask('yyyy/mm/dd', { placeholder: '____/__/__' });
 
 function convertStringToDate(string) {
     var from = string.split("/");
@@ -297,4 +301,3 @@ function submitTimeTableToApi(timeTable) {
         }
     });
 }
-
