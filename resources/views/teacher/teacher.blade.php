@@ -20,7 +20,7 @@
                             <button class="btn btn-success">ADD TEACHER</button>
                         </a>
                         <div class="table-responsive">
-                            <table class="table table-bordered table-striped table-hover dataTable">
+                            <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                 <thead>
                                 <tr>
                                     <th>#</th>

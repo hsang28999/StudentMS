@@ -47,7 +47,7 @@ Route::group(['prefix' => 'teacher'],function (){
 /*==============================================================*/
 
 Route::group(['prefix' => 'academic'],function (){
-    Route::group(['prefix' => 'class'],function (){
+    Route::group(['prefix' => 'academic_class'],function (){
         Route::get('',[
             'as' => 'class',function() {
                 return view('academic.class');
@@ -66,7 +66,7 @@ Route::group(['prefix' => 'academic'],function (){
     });
 
 
-    Route::group(['prefix' => 'subject'],function (){
+    Route::group(['prefix' => 'academic_subject'],function (){
         Route::get('create',[
             'as' => 'createSubject',function(){
                 return view('academic.addSubject');
@@ -138,38 +138,38 @@ Route::group(['prefix' => 'student'],function (){
 
 Route::group(['prefix' => 'attendance'],function (){
 
-    Route::group(['prefix' => 'student_attendance'],function (){
+    Route::group(['prefix' => 'attendance_student'],function (){
         Route::get('',[
-            'as' => 'student_attendance',function() {
+            'as' => 'attendance_student',function() {
                 return view('attendance.studentAttendance');
             }
         ]);
         Route::get('create',[
-            'as' => 'add_student_attendance',function(){
+            'as' => 'add_attendance_student',function(){
                 return view('attendance.addStudentAttendance');
             }
         ]);
         Route::get('view',[
-            'as' => 'view_student_attendance',function(){
+            'as' => 'view_attendance_student',function(){
                 return view('attendance.viewStudentAttendance');
             }
         ]);
     });
 
 
-    Route::group(['prefix' => 'teacher_attendance'],function (){
+    Route::group(['prefix' => 'attendance_teacher'],function (){
         Route::get('',[
-            'as' => 'teacher_attendance',function() {
+            'as' => 'attendance_teacher',function() {
                 return view('attendance.teacherAttendance');
             }
         ]);
         Route::get('create',[
-            'as' => 'add_teacher_attendance',function(){
+            'as' => 'add_attendance_teacher',function(){
                 return view('attendance.addTeacherAttendance');
             }
         ]);
         Route::get('view',[
-            'as' => 'view_teacher_attendance',function(){
+            'as' => 'view_attendance_teacher',function(){
                 return view('attendance.viewTeacherAttendance');
             }
         ]);

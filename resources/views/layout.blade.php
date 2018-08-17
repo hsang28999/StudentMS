@@ -153,13 +153,13 @@
                     </a>
                     <ul class="ml-menu">
                         <li id="attendance_student">
-                            <a href="{{route('student_attendance')}}">
+                            <a href="{{route('attendance_student')}}">
                                 <i class="fas fa-users"></i>
                                 <span>Student Attendance</span>
                             </a>
                         </li>
                         <li id="attendance_teacher">
-                            <a href="{{route('teacher_attendance')}}">
+                            <a href="{{route('attendance_teacher')}}">
                                 <i class="fas fa-user-tie" ></i>
                                 <span>Teacher Attendance</span>
                             </a>
