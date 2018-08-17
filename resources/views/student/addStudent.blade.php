@@ -16,8 +16,10 @@
                     <div class="card">
                         <div class="body">
                             <div class="table-responsive">
-                                <table class="col-xs-12">                                
-                                    <tbody>
+                                <form action="{{route('addStudent')}}" METHOD="POST">
+                                    @csrf
+                                    <table class="col-xs-12">
+                                        <tbody>
                                         <tr>
                                             <td class="col-md-6">
                                                 <b>Name</b>
@@ -26,7 +28,7 @@
                                                         <i class="material-icons">person</i>
                                                     </span>
                                                     <div class="form-line">
-                                                        <input type="text" class="form-control" placeholder="Username">
+                                                        <input type="text" class="form-control" placeholder="Your Name" name="name">
                                                     </div>
                                                 </div>
                                             </td>
@@ -37,12 +39,53 @@
                                                         <i class="material-icons">phone_iphone</i>
                                                     </span>
                                                     <div class="form-line">
-                                                        <input type="text" class="form-control" placeholder="01282375119">
+                                                        <input type="text" class="form-control" placeholder="01282375119" name="phone">
                                                     </div>
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
+                                            <td class="col-md-6">
+                                                <b>Gender</b>
+                                                <div class="input-group input-group-lg">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">wc</i>
+                                                    </span>
+                                                    <div class="form-line">
+                                                        <select class="form-control show-tick" name="gender">
+                                                            <option value="">-- Please select --</option>
+                                                            <option value="1">Male</option>
+                                                            <option value="0">Female</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-md-6">
+                                                <p>
+                                                    <b>Student Code</b>
+                                                </p>
+                                                <div class="input-group input-group-lg">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">home</i>
+                                                    </span>
+                                                    <div class="form-line">
+                                                        <input name="studentCode" type="text" class="form-control" placeholder="A001">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-md-6">
+                                                <b>BirthDay</b>
+                                                <div class="input-group input-group-lg">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">date_range</i>
+                                                    </span>
+                                                    <div class="form-line">
+                                                        <input name="birthday" type="text" class="form-control " placeholder="Ex: 2016-07-30">
+                                                    </div>
+                                                </div>
+                                            </td>
                                             <td class="col-md-6">
                                                 <p>
                                                     <b>Class</b>
@@ -52,44 +95,12 @@
                                                         <i class="material-icons">group</i>
                                                     </span>
                                                     <div class="form-line">
-                                                        <input type="text" class="form-control" placeholder="T1707A">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="col-md-6">
-                                                <p>
-                                                    <b>Country</b>
-                                                </p>
-                                                <div class="input-group input-group-lg">
-                                                    <span class="input-group-addon">
-                                                        <i class="material-icons">home</i>
-                                                    </span>
-                                                    <div class="form-line">
-                                                        <input type="text" class="form-control" placeholder="Ex: Hà Nội">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="col-md-6">
-                                                <b>Date</b>
-                                                <div class="input-group input-group-lg">
-                                                    <span class="input-group-addon">
-                                                        <i class="material-icons">date_range</i>
-                                                    </span>
-                                                    <div class="form-line">
-                                                        <input type="text" class="form-control date" placeholder="Ex: 30/07/2016">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="col-md-6">
-                                                <b>Gender</b>
-                                                <div class="input-group input-group-lg">
-                                                    <span class="input-group-addon">
-                                                        <i class="material-icons">wc</i>
-                                                    </span>
-                                                    <div class="form-line">
-                                                        <input type="text" class="form-control date" placeholder="Male or Female">
+                                                        <select class="form-control show-tick" name="studentClass">
+                                                            <option value="">-- Please select --</option>
+                                                            @foreach($class as $item)
+                                                                <option value="{{$item -> classId}}">{{$item -> className}}</option>
+                                                            @endforeach
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </td>
@@ -102,18 +113,7 @@
                                                         <i class="material-icons">public</i>
                                                     </span>
                                                     <div class="form-line">
-                                                        <input type="text" class="form-control date" placeholder="abc@example.com">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="col-md-6">
-                                                <b>Religion</b>
-                                                <div class="input-group input-group-lg">
-                                                    <span class="input-group-addon">
-                                                        <i class="material-icons">local_library</i>
-                                                    </span>
-                                                    <div class="form-line">
-                                                        <input type="text" class="form-control date" placeholder="Male or Female">
+                                                        <input name="email" type="text" class="form-control" placeholder="abc@example.com">
                                                     </div>
                                                 </div>
                                             </td>
@@ -126,13 +126,15 @@
                                                         <i class="material-icons">location_on</i>
                                                     </span>
                                                     <div class="form-line">
-                                                        <input type="text" class="form-control date" placeholder="8A - Tôn Thất Thuyết - Mỹ Đình 2- Cầu Giấy - Hà Nội">
+                                                        <input name="address" type="text" class="form-control" placeholder="8A - Tôn Thất Thuyết - Mỹ Đình 2- Cầu Giấy - Hà Nội">
                                                     </div>
                                                 </div>
                                             </td>
-                                        </tr>                                      
-                                    </tbody>
-                                </table>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <button type="submit" class="btn btn-primary m-t-15 waves-effect">Add Student</button>
+                                </form>
                             </div>
                         </div>
                     </div>

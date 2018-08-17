@@ -38,7 +38,6 @@
 
     <!-- Bootstrap Select Css -->
     <link href="{{asset('plugins/bootstrap-select/css/bootstrap-select.css')}}" rel="stylesheet" />
-
     <link href="{{asset('plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css')}}" rel="stylesheet" />
 </head>
 
