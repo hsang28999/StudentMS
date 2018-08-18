@@ -57,6 +57,13 @@ function convertStringToDate(string) {
     var date = new Date(stringDate);
     return date;
 }
+
+function convertToYYYYMMDD(day) {
+    var from = day.split("/");
+    var stringDate = from[2] + "/" + from[1] + "/" + from[0];
+    return stringDate;
+}
+
 function getDaysFromTimeInput(startAt, endAt) {
     var days=[];
     for (var d = startAt; d <= endAt; d.setDate(d.getDate() + 1)) {
@@ -79,17 +86,36 @@ function convertDateToString(day){
     var dayString = date + "/" +  month + "/" + year;
     return dayString;
 }
+function getSubjects() {
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    var data=[];
+    var content = "";
+    $.ajax({
+        headers: {
+            'X-CSRF-TOKEN': CSRF_TOKEN
+        },
+        type:"GET",
+        async: false,
+        url: "/timeTable/getSubjects",
+        success: function(response){
+            data=response;
+            for (var i=0;i<data.length;i++) {
+                content += '<option value="'+data[i].subjectId+'">'+data[i].subjectName+' - ' + data[i].teacherName +'</option>';
+            };
+
+        }
+    });
+    return content;
+};
 function generateSubjectTable(count,day){
+
     var rows ='';
     for (var i=1;i<=count;i++){
         rows += '                                   <li class="list-group-item section-table">\n' +
             '                                            <span class="badge float-left margin-bot-5">Session <span class="section-index">'+i+'</span></span>\n' +
             '                                            <select class="select-beast subject-selected" placeholder="Select a subject...">\n' +
             '                                                <option value="">Select a subject...</option>\n' +
-            '                                                <option value="4">Thomas Edison</option>\n' +
-            '                                                <option value="1">Nikola</option>\n' +
-            '                                                <option value="3">Nikola Tesla</option>\n' +
-            '                                                <option value="5">Arnold Schwarzenegger</option>\n' +
+                                                                getSubjects()+
             '                                            </select>\n' +
             '                                        </li>\n';
     }
@@ -273,7 +299,7 @@ $('#list-date-button2').on('click','#submitTimetable',function () {
                 section.push(subject);
             }
             var day = {
-                "dayValue":convertStringToDate(dayValue),
+                "dayValue":convertToYYYYMMDD(dayValue),
                 "sessions":section
             };
             daysHasSubject.push(day) ;
@@ -288,14 +314,14 @@ $('#list-date-button2').on('click','#submitTimetable',function () {
 
 function submitTimeTableToApi(timeTable) {
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-    console.log(timeTable);
+    var time_table = JSON.stringify(timeTable);
     $.ajax({
         headers: {
             'X-CSRF-TOKEN': CSRF_TOKEN
         },
         type:"POST",
         url: "/timeTable",
-        data: {timeTable : timeTable},
+        data: {timeTable : time_table},
         dataType: 'json',
         success: function(data){
             console.log(data);

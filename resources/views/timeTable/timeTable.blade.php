@@ -1,6 +1,6 @@
 @extends('layout')
 @section('section')
-    <section class="content">
+    <section class="content ddmmyyyy">
         <div class="container-fluid">
             <!-- Subject Table-->
             <div class="row clearfix">
@@ -63,9 +63,9 @@
                                 <div class="col-md-3">
                                         Class
                                     <select id="class-selected" class="form-control show-tick">
-                                        <option>T1707A</option>
-                                        <option>T1707B</option>
-                                        <option>T1707C</option>
+                                        @foreach($classes as $class)
+                                        <option value="{{$class->classId}}">{{$class->className}}</option>
+                                        @endforeach
                                     </select>
 
                                 </div>

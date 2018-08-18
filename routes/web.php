@@ -176,13 +176,12 @@ Route::group(['prefix' => 'attendance'],function (){
     });
 });
 
-
+Route::get('/test','TimeTableController@test');
 
 Route::group(['prefix' => 'timeTable'],function (){
+    Route::get('/getSubjects','TimeTableController@getSubjects');
     Route::get('/',[
-        'as' => 'timeTable',function() {
-            return view('timeTable.timeTable');
-        }
+        'as' => 'timeTable','uses'=>'TimeTableController@getTimeTable'
     ]);
     Route::post('/','TimeTableController@saveTimeTableToDb');
     Route::get('/view',[
