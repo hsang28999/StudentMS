@@ -77,10 +77,23 @@ Route::group(['prefix' => 'academic'],function (){
             'uses' => 'SubjectController@index'
 
         ]);
-        Route::get('edit/{id}',[
-            'as' => 'editSubject',function(){
-                return view('academic.editSubject');
-            }
+        Route::get('edit',[
+            'as' => 'editSubject',
+            'uses' => 'SubjectController@edit'
+        ]);
+        Route::post('create',[
+            'as' => 'storeSubject',
+            'uses' => 'SubjectController@store'
+
+        ]);
+        Route::post('edit',[
+            'as' => 'updateSubject',
+            'uses' => 'SubjectController@update'
+
+        ]);
+        Route::post('/delete}',[
+            'as' => 'deleteSubject',
+            'uses' => 'StudentController@delete'
         ]);
     });
 });
