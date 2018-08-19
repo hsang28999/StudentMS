@@ -91,9 +91,9 @@ Route::group(['prefix' => 'academic'],function (){
             'uses' => 'SubjectController@update'
 
         ]);
-        Route::post('/delete}',[
+        Route::post('delete',[
             'as' => 'deleteSubject',
-            'uses' => 'StudentController@delete'
+            'uses' => 'SubjectController@delete'
         ]);
     });
 });

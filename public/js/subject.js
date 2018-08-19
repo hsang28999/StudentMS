@@ -1,11 +1,12 @@
 $('.deleteBtn').click(function () {
-    alert(window.location.href + '/delete?id=' + this.id);
+    // alert($('meta[name="csrf-token"]').attr('content'));
     $.ajax({
-        url : window.location.href + '/delete?id=' + this.id,
+        url : window.location.href + '/delete',
         type : "post",
         dataType:"text",
         data : {
-            '_token': $('meta[name="csrf-token"]').attr('content')
+            '_token': $('meta[name="csrf-token"]').attr('content'),
+            'id': this.id
         },
         success : function (result){
             alert('Delete Success');

@@ -51,7 +51,7 @@ class SubjectController extends Controller
     }
     public function delete(Request $request){
         $subject = Subject::where('subjectId',$request -> id) -> delete();
-//        return redirect() -> route('student');
-        return response('Delete Success',200);
+        return redirect() -> route('student');
+//        return response('Delete Success',200);
     }
 }
