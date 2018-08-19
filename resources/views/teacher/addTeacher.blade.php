@@ -95,9 +95,6 @@
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="input-group">
-                                                <!-- <span class="input-group-addon">
-                                                    <i class="material-icons">date_range</i>
-                                                </span> -->
                                             <div class="form-line">
                                                 <input type="text"  class="form-control date" placeholder="VD: 2016/07/26" name="dateOfBirth">
                                             </div>

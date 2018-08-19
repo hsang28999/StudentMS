@@ -14,218 +14,45 @@
                         </h2>
                     </div>
                     <div class="body">
-                        <a href="{{route('createClass')}}">
-                            <button class="btn btn-success">ADD CLASS</button>
-                        </a>
+                        <div class="form-float" style="height: 35px;">
+                            <a href="{{route('addClass')}}">
+                                <button class="btn btn-success">ADD CLASS</button>
+                            </a>
+                        </div>
                         <div class="table-responsive">
-                            <table class="table table-bordered table-striped table-hover dataTable">
+                            <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                 <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>Class</th>
-                                    <th>Class Numberic</th>
+                                    <th>Class ID</th>
+                                    <th>Class Name</th>
+                                    <th>Teacher ID</th>
                                     <th>Teacher Name</th>
-                                    <th>Note</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
+                                @foreach ($class as $cls)
                                 <tbody>
                                 <tr>
-                                    <td>1</td>
-                                    <td>One</td>
-                                    <td>1</td>
-                                    <td>Dipok Kumar Halder</td>
+                                    <td>{{$cls -> classId}}</td>
+                                    <td>{{$cls -> className}}</td>
+                                    <td>{{$cls -> teachers_teacherId}}</td>
                                     <td></td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
+                                        <button type="button" data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-small bg-lime waves-effect ">
+                                            <a href="academic_class/<?php echo $cls['classId']?>/edit">
+                                                <i class="material-icons">edit</i>
+                                            </a>
+                                        </button>
+
+                                        <button type="button" data-toggle="tooltip" data-placement="top" title="Delete" class="btn btn-small bg-red waves-effect">
+                                            <a href="academic_class/<?php echo $cls['classId']?>/delete">
+                                                <i class="material-icons">delete</i>
+                                            </a>
+                                        </button>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>One</td>
-                                    <td>1</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td></td>
-                                    <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>One</td>
-                                    <td>1</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td></td>
-                                    <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>One</td>
-                                    <td>1</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td></td>
-                                    <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>One</td>
-                                    <td>1</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td></td>
-                                    <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>One</td>
-                                    <td>1</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td></td>
-                                    <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>One</td>
-                                    <td>1</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td></td>
-                                    <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>One</td>
-                                    <td>1</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td></td>
-                                    <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>One</td>
-                                    <td>1</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td></td>
-                                    <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>One</td>
-                                    <td>1</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td></td>
-                                    <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>One</td>
-                                    <td>1</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td></td>
-                                    <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>One</td>
-                                    <td>1</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td></td>
-                                    <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>One</td>
-                                    <td>1</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td></td>
-                                    <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                </tbody>
+                                </tr>                                
+                                </tbody> 
+                                @endforeach                        
                             </table>
                         </div>
                     </div>

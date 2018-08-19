@@ -20,34 +20,30 @@
                                 </li>
                             </ol>
                             <h2>
-                                ADD CLASS
+                                EDIT CLASS
                             </h2>
                         </div>
                         <div class="body">
-                            <form>
+                            <form action="" method="POST">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">     
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="text" id="" class="form-control">
-                                        <label class="form-label">Class</label>
+                                        <input type="text" id="" class="form-control" name="className" value="{{$class -> className}}">
+                                        <label class="form-label" >Class Name</label>
                                     </div>
                                 </div>
 
                                 <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="text" id="" class="form-control">
-                                        <label class="form-label">Class Numberic</label>
-                                    </div>
-                                </div>
-                                <div class="form-group form-float">
                                     <label for="">Teacher Name</label>
-                                    <select class="form-control show-tick" >
-                                        <option>Mustard</option>
-                                        <option>Ketchup</option>
-                                        <option>Relish</option>
+                                    <select class="form-control show-tick" value="" name="teachers_teacherId"> 
+                                        @foreach($teacher as $tch)
+                                            <option value="{{$tch -> teacherId}}" @if($tch -> teacherId == $class -> teachers_teacherId)selected @endif>{{$tch -> teacherName}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <br>
-                                <button type="button" class="btn btn-primary m-t-15 waves-effect">ADD</button>
+
+                                <button type="submit" class="btn btn-primary m-t-15 waves-effect">Update</button>
                             </form>
                         </div>
                     </div>
@@ -56,6 +52,6 @@
         </div>
     </section>
     <script>
-        activeSection("academic","academic_Class");
+        activeSection("academic","academic_class");
     </script>
 @endsection

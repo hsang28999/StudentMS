@@ -34,7 +34,7 @@ class StudentController extends Controller
         $student -> studentCode = Input::get('studentCode');
         $student -> email = Input::get('email');
         $student -> save();
-        return redirect() -> route('student');
+        return redirect() -> route('class');
 
     }
     public function add(){
