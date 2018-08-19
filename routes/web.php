@@ -68,9 +68,8 @@ Route::group(['prefix' => 'academic'],function (){
 
     Route::group(['prefix' => 'academic_subject'],function (){
         Route::get('create',[
-            'as' => 'createSubject',function(){
-                return view('academic.addSubject');
-            }
+            'as' => 'createSubject',
+            'uses' => 'SubjectController@index'
         ]);
         Route::get('',[
             'as' => 'subject',function() {
