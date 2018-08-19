@@ -66,7 +66,7 @@ Route::group(['prefix' => 'academic'],function (){
             'as' => 'editClass',
             'uses' => 'ClassController@edit'
         ]);
-        Route::post('/{classId}/update', 'ClassController@update');
+        Route::post('/{classId}/edit', 'ClassController@update');
 
         Route::get('/{classId}/delete', 'ClassController@delete');
     });

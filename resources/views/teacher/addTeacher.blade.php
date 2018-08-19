@@ -114,6 +114,7 @@
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary m-t-15 waves-effect">ADD</button>
+                                <button type="leave" class="btn btn-danger m-t-15 waves-effect">LEAVE</button>
                             </form>
                         </div>
                     </div>

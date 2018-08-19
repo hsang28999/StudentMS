@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Classes;
 use App\SchoolDay;
 use App\Teacher;
@@ -34,29 +35,30 @@ class ClassController extends Controller
     }
 
     public function index(){
-        $teacher = Teacher::all();
-        $class = Classes::all();
-        return view('academic.class') -> with('teacher',$teacher)
-                                        -> with('class',$class );
+        $class = DB::table('classes')
+            ->join('teachers', 'classes.teachers_teacherId', '=', 'teachers.teacherId')
+            ->select('classes.*','teachers.teacherName')
+            ->get();
+        return view('academic.class')-> with('class',$class );
     }
 
-    public  function edit(Request $request){
-        $class = Classes::where('classId', $request->classId)->first();
+    public  function edit(Request $request,$classId){
+        $class = Classes::where('classId', $classId)->first();
         $teacher = Teacher::all();
         return view('academic.editClass') ->  with('class',$class)
                                           ->  with('teacher',$teacher);
     }
 
-    public function  update(Request $request){
-        $class = Classes::where('classId',$request -> classId)-> update([
+    public function  update(Request $request,$classId){
+        $class = Classes::where('classId',$classId)-> update([
             'className' => Input::get('className'),
-            'teachers_teacherId' => Input::get('teacherId')
+            'teachers_teacherId' => $request->teachers_teacherId
         ]);
         return redirect() -> action('ClassController@index');
     }
 
-    public function delete(Request $request){
-        $classes = Classes::where('classId', $request->classId)->delete();
+    public function delete(Request $request,$classId){
+        $classes = Classes::where('classId', $classId)->delete();
 
         return redirect() -> action('academic_class.class');
     }
