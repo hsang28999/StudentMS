@@ -69,12 +69,13 @@ Route::group(['prefix' => 'academic'],function (){
     Route::group(['prefix' => 'academic_subject'],function (){
         Route::get('create',[
             'as' => 'createSubject',
-            'uses' => 'SubjectController@index'
+            'uses' => 'SubjectController@add'
+
         ]);
         Route::get('',[
-            'as' => 'subject',function() {
-                return view('academic.subject');
-            }
+            'as' => 'subject',
+            'uses' => 'SubjectController@index'
+
         ]);
         Route::get('edit/{id}',[
             'as' => 'editSubject',function(){
