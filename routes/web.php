@@ -165,9 +165,9 @@ Route::group(['prefix' => 'attendance'],function (){
             'as' => 'add_attendance_student',
             'uses' => 'StudentAttendanceController@attendance'
         ]);
-        Route::get('attendance/{id}',[
-            'as' => 'getAttendance',
-            'uses' => 'StudentAttendanceController@attendanceSearchClass'
+        Route::post('attendance',[
+            'as' => 'storeAtendance',
+            'uses' => 'StudentAttendanceController@store'
         ]);
         Route::get('view',[
             'as' => 'view_attendance_student',function(){
