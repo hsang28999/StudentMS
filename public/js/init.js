@@ -304,12 +304,11 @@ $('#list-date-button2').on('click','#submitTimetable',function () {
             };
             daysHasSubject.push(day) ;
         }
-
     var list_time_table={
         "class":classSelected,
         "timeTable": daysHasSubject
     }
-    submitTimeTableToApi(JSON.stringify(list_time_table));
+    submitTimeTableToApi(list_time_table);
 });
 
 function submitTimeTableToApi(timeTable) {
@@ -320,7 +319,7 @@ function submitTimeTableToApi(timeTable) {
             'X-CSRF-TOKEN': CSRF_TOKEN
         },
         type:"POST",
-        url: "/timeTable",
+        url: "timeTable",
         data: {timeTable : time_table},
         dataType: 'json',
         success: function(data){

@@ -1,92 +1,56 @@
 @extends('layout')
 @section('section')
-    <section class="content ddmmyyyy">
+    <section class="content">
         <div class="container-fluid">
-            <!-- Subject Table-->
+            <!-- Class Table-->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
                             <ol class="breadcrumb pull-right m-t--15">
                             </ol>
-
                             <h2 style="display: inline">
-                                ADD TIMETABLE
+                                TIME TABLE
                             </h2>
-
                         </div>
-                        <div class="body" id="timeTable">
-
-                            <div class="row">
-                                {{--<div class="col-md-3">--}}
-                                    {{--<select class="select-beast " placeholder="Select a subject...">--}}
-                                        {{--<option value="">Select a person...</option>--}}
-                                        {{--<option value="4">Thomas Edison</option>--}}
-                                        {{--<option value="1">Nikola</option>--}}
-                                        {{--<option value="3">Nikola Tesla</option>--}}
-                                        {{--<option value="5">Arnold Schwarzenegger</option>--}}
-                                    {{--</select>--}}
-                                {{--</div>--}}
-                                <div class="col-md-3">
-                                    Start At
-                                    <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">date_range</i>
-                                            </span>
-                                        <div class="form-line">
-                                            <input type="text" id="startAt" class="form-control date" placeholder="VD: 30/07/2016">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    End At
-                                    <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">date_range</i>
-                                            </span>
-                                        <div class="form-line">
-                                            <input type="text" id="endAt" class="form-control date" placeholder="VD: 30/07/2016">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    Maximum sessions per day
-                                    <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">subject</i>
-                                            </span>
-                                        <div class="form-line">
-                                            <input type="number" id="countSession" class="form-control ">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                        Class
-                                    <select id="class-selected" class="form-control show-tick">
-                                        @foreach($classes as $class)
-                                        <option value="{{$class->classId}}">{{$class->className}}</option>
-                                        @endforeach
-                                    </select>
-
-                                </div>
-                                <div class="col-md-7 col-md-offset-5">
-                                    <button id="ok" class="btn btn-success">ADD SUBJECT</button>
-                                </div>
-                                <div class="col-md-12">
-                                    <div id="list-date-button">
-                                    </div>
-                                    <div id="list-date-button2">
-
-                                    </div>
-                                </div>
+                        <div class="body">
+                            <a href="{{route('addTimeTable')}}">
+                                <button class="btn btn-success">ADD TIME TABLE</button>
+                            </a>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-hover dataTable">
+                                    <thead>
+                                    @foreach($classes as $key => $class)
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Class</th>
+                                        <th>Teacher Name</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>{{$key+1}}</td>
+                                        <td>{{$class->className}}</td>
+                                        <td>{{$class->teacherName}}</td>
+                                        <td>
+                                            <a href="{{route('viewTimeTable',['id'=>$class->classId])}}" class="btn btn-small bg-lime waves-effect ">
+                                                <i class="material-icons">remove_red_eye</i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- #END# subJect Table-->
 
         </div>
     </section>
-    <script></script>
+    <script>
+        activeSection("timeTable");
+    </script>
 @endsection

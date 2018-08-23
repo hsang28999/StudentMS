@@ -181,18 +181,14 @@ Route::get('/test','TimeTableController@test');
 Route::group(['prefix' => 'timeTable'],function (){
     Route::get('/getSubjects','TimeTableController@getSubjects');
     Route::get('/',[
-        'as' => 'timeTable','uses'=>'TimeTableController@getTimeTable'
+        'as' => 'timeTable','uses'=>'TimeTableController@getClass'
     ]);
     Route::post('/','TimeTableController@saveTimeTableToDb');
-    Route::get('/view',[
-        'as' => 'viewTimeTable',function(){
-            return view('timeTable.timeTable_detail');
-        }
+    Route::get('/view/{id}',[
+        'as' => 'viewTimeTable','uses'=>'TimeTableController@viewTimeTable'
     ]);
     Route::get('/add',[
-        'as' => 'addTimeTable',function(){
-            return view('timeTable.addTimeTable');
-        }
-    ]);
+        'as' => 'addTimeTable','uses'=>'TimeTableController@getTimeTable'
+     ]);
 });
 
