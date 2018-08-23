@@ -212,3 +212,6 @@ Route::group(['prefix' => 'timeTable'],function (){
      ]);
 });
 
+Route::get('test',['as' => 'testRoute',function(){
+    return 1;
+}]);

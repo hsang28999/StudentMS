@@ -30,7 +30,7 @@ class StudentAttendanceController extends Controller
         if (Input::has('classId')){
             $schooldayId = SchoolDay::where([
                 ['classes_classId',Input::get('classId') ],
-                ['dayValue',Carbon::now()-> toDateString()]
+                ['dayValue',Carbon::now('Asia/Ho_Chi_Minh')-> toDateString()]
             ]) -> first();
 //            dump($schooldayId -> schoolDayId);
             if ($schooldayId == null){
@@ -85,5 +85,7 @@ class StudentAttendanceController extends Controller
     }
     public function store(){
         dump(Input::get('data'));
+        error_log($data);
+        return redirect() -> route('test');
     }
 }

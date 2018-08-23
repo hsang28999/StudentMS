@@ -37,7 +37,7 @@
                                     <div class="col-sm-3">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input disabled value="{{\Carbon\Carbon::now()->toDateString()}}" type="text" class="datepicker form-control" placeholder="Please choose a date...">
+                                                <input disabled value="{{\Carbon\Carbon::now('Asia/Ho_Chi_Minh') -> toDateString()}}" type="text" class="datepicker form-control" placeholder="Please choose a date...">
                                             </div>
                                         </div>
                                     </div>

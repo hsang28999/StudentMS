@@ -10,7 +10,7 @@ $('#submitBtn').click(function () {
 
     // while ()
     console.log($('#atendanceCheckBox').children()[0]);
-    var data = [];
+    var formData = new FormData();
     $('.attendanceCheck:checked').each(function (index,item) {
         var obj = {
             studentAttendanceValue : item.value,
@@ -18,6 +18,7 @@ $('#submitBtn').click(function () {
         }
         data.push(obj);
     })
+    console.log(data)
     $.ajax({
         method: 'POST',
         url: window.location.pathname ,
@@ -26,6 +27,7 @@ $('#submitBtn').click(function () {
             'dataAtendance': data
         },
         success: function (resp) {
+            alert('Success')
 
         },
         error: function () {
