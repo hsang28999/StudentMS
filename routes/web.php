@@ -99,14 +99,19 @@ Route::group(['prefix' => 'academic'],function (){
 });
 
 Route::group(['prefix'=> 'mark'],function(){
-    Route::get('',['as' => 'mark',function (){
-        return view('mark.mark');
-    }]);
-    Route::get('create',['as' => 'addMark',function (){
-        return view('mark.addmark');
-    }]);
+    Route::get('',[
+        'as' => 'mark',
+        'uses' => 'MarkController@index'
+    ]);
+    Route::get('add',[
+        'as' => 'addMark',
+        'uses' => 'MarkController@create'
+    ]);
+
+    Route::post('add', 'MarkController@store');
+
     Route::get('view',['as' => 'viewMark',function (){
-        return view('mark.mark_detail');
+        return view('mark.viewMark');
     }]);
 });
 
