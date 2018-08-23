@@ -11,48 +11,21 @@ class SubjectTableSeeder extends Seeder
      * @return void
      */
     public function run()
+
     {
-        DB::table('subjects') -> insert([
-           [
-               'subjectName' => str_random(10),
-               'passMark' => mt_rand (5*10, 7*10) / 10,
-               'finalMark' => mt_rand (9*10, 10*10) / 10,
-               'teachers_teacherId' => 1,
-               'created_at' =>  \Illuminate\Support\Carbon::now(),
-               'updated_at' =>  \Illuminate\Support\Carbon::now(),
-           ],
-            [
-                'subjectName' => str_random(10),
-                'passMark' => mt_rand (5*10, 7*10) / 10,
-                'finalMark' => mt_rand (9*10, 10*10) / 10,
-                'teachers_teacherId' => 2,
-                'created_at' =>  \Illuminate\Support\Carbon::now(),
-                'updated_at' =>  \Illuminate\Support\Carbon::now(),
-            ],
-            [
-                'subjectName' => str_random(10),
-                'passMark' => mt_rand (5*10, 7*10) / 10,
-                'finalMark' => mt_rand (9*10, 10*10) / 10,
-                'teachers_teacherId' => 3,
-                'created_at' =>  \Illuminate\Support\Carbon::now(),
-                'updated_at' =>  \Illuminate\Support\Carbon::now(),
-            ],
-            [
-                'subjectName' => str_random(10),
-                'passMark' => mt_rand (5*10, 7*10) / 10,
-                'finalMark' => mt_rand (9*10, 10*10) / 10,
-                'teachers_teacherId' => 4,
-                'created_at' =>  \Illuminate\Support\Carbon::now(),
-                'updated_at' =>  \Illuminate\Support\Carbon::now(),
-            ],
-            [
-                'subjectName' => str_random(10),
-                'passMark' => mt_rand (5*10, 7*10) / 10,
-                'finalMark' => mt_rand (9*10, 10*10) / 10,
-                'teachers_teacherId' => 5,
-                'created_at' =>  \Illuminate\Support\Carbon::now(),
-                'updated_at' =>  \Illuminate\Support\Carbon::now(),
-            ],
-        ]);
+        $SJ = ['Math','English','Literature','History','Laravel','PHP','Chinese','.Net'];
+        for ($i=0;$i<20;$i++){
+            DB::table('subjects') -> insert([
+                [
+                    'subjectName' => $SJ[mt_rand(0,count($SJ)-1)],
+                    'passMark' => mt_rand (5*10, 7*10) / 10,
+                    'finalMark' => mt_rand (9*10, 10*10) / 10,
+                    'teachers_teacherId' => ($i+1),
+                    'created_at' =>  \Illuminate\Support\Carbon::now(),
+                    'updated_at' =>  \Illuminate\Support\Carbon::now(),
+                ],
+            ]);
+        }
+
     }
 }

@@ -153,14 +153,16 @@ Route::group(['prefix' => 'attendance'],function (){
 
     Route::group(['prefix' => 'attendance_student'],function (){
         Route::get('',[
-            'as' => 'attendance_student',function() {
-                return view('attendance.studentAttendance');
-            }
+            'as' => 'attendance_student',
+            'uses' => 'StudentAttendanceController@index'
         ]);
-        Route::get('create',[
-            'as' => 'add_attendance_student',function(){
-                return view('attendance.addStudentAttendance');
-            }
+        Route::get('attendance',[
+            'as' => 'add_attendance_student',
+            'uses' => 'StudentAttendanceController@attendance'
+        ]);
+        Route::get('attendance/{id}',[
+            'as' => 'getAttendance',
+            'uses' => 'StudentAttendanceController@attendanceSearchClass'
         ]);
         Route::get('view',[
             'as' => 'view_attendance_student',function(){
