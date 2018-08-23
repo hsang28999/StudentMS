@@ -68,32 +68,50 @@ Route::group(['prefix' => 'academic'],function (){
 
     Route::group(['prefix' => 'academic_subject'],function (){
         Route::get('create',[
-            'as' => 'createSubject',function(){
-                return view('academic.addSubject');
-            }
+            'as' => 'createSubject',
+            'uses' => 'SubjectController@add'
+
         ]);
         Route::get('',[
-            'as' => 'subject',function() {
-                return view('academic.subject');
-            }
+            'as' => 'subject',
+            'uses' => 'SubjectController@index'
+
         ]);
-        Route::get('edit/{id}',[
-            'as' => 'editSubject',function(){
-                return view('academic.editSubject');
-            }
+        Route::get('edit',[
+            'as' => 'editSubject',
+            'uses' => 'SubjectController@edit'
+        ]);
+        Route::post('create',[
+            'as' => 'storeSubject',
+            'uses' => 'SubjectController@store'
+
+        ]);
+        Route::post('edit',[
+            'as' => 'updateSubject',
+            'uses' => 'SubjectController@update'
+
+        ]);
+        Route::post('delete',[
+            'as' => 'deleteSubject',
+            'uses' => 'SubjectController@delete'
         ]);
     });
 });
 
 Route::group(['prefix'=> 'mark'],function(){
-    Route::get('',['as' => 'mark',function (){
-        return view('mark.mark');
-    }]);
-    Route::get('create',['as' => 'addMark',function (){
-        return view('mark.addmark');
-    }]);
+    Route::get('',[
+        'as' => 'mark',
+        'uses' => 'MarkController@index'
+    ]);
+    Route::get('add',[
+        'as' => 'addMark',
+        'uses' => 'MarkController@create'
+    ]);
+
+    Route::post('add', 'MarkController@store');
+
     Route::get('view',['as' => 'viewMark',function (){
-        return view('mark.mark_detail');
+        return view('mark.viewMark');
     }]);
 });
 
@@ -140,14 +158,16 @@ Route::group(['prefix' => 'attendance'],function (){
 
     Route::group(['prefix' => 'attendance_student'],function (){
         Route::get('',[
-            'as' => 'attendance_student',function() {
-                return view('attendance.studentAttendance');
-            }
+            'as' => 'attendance_student',
+            'uses' => 'StudentAttendanceController@index'
         ]);
-        Route::get('create',[
-            'as' => 'add_attendance_student',function(){
-                return view('attendance.addStudentAttendance');
-            }
+        Route::get('attendance',[
+            'as' => 'add_attendance_student',
+            'uses' => 'StudentAttendanceController@attendance'
+        ]);
+        Route::get('attendance/{id}',[
+            'as' => 'getAttendance',
+            'uses' => 'StudentAttendanceController@attendanceSearchClass'
         ]);
         Route::get('view',[
             'as' => 'view_attendance_student',function(){
@@ -176,24 +196,19 @@ Route::group(['prefix' => 'attendance'],function (){
     });
 });
 
-
+Route::get('/test','TimeTableController@test');
 
 Route::group(['prefix' => 'timeTable'],function (){
+    Route::get('/getSubjects','TimeTableController@getSubjects');
     Route::get('/',[
-        'as' => 'timeTable',function() {
-            return view('timeTable.timeTable');
-        }
+        'as' => 'timeTable','uses'=>'TimeTableController@getClass'
     ]);
     Route::post('/','TimeTableController@saveTimeTableToDb');
-    Route::get('/view',[
-        'as' => 'viewTimeTable',function(){
-            return view('timeTable.timeTable_detail');
-        }
+    Route::get('/view/{id}',[
+        'as' => 'viewTimeTable','uses'=>'TimeTableController@viewTimeTable'
     ]);
     Route::get('/add',[
-        'as' => 'addTimeTable',function(){
-            return view('timeTable.addTimeTable');
-        }
-    ]);
+        'as' => 'addTimeTable','uses'=>'TimeTableController@getTimeTable'
+     ]);
 });
 
