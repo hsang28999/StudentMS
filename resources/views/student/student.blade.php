@@ -51,8 +51,8 @@
                                                 <button type="button" data-toggle="tooltip" data-placement="top" title="Delete" class="btn btn-small bg-red waves-effect"><i class="material-icons" style="color: white;" data-toggle="modal" data-target="#{{$item -> studentId}}">delete</i></button>
                                             </td>
                                         </tr>
-                                        <form action="" METHOD="POST">
-                                            @csrf
+
+
                                             <div class="modal fade" id="{{$item -> studentId}}" tabindex="-1" role="dialog">
                                                 <input type="hidden" name="studentId" value="{{$item -> studentId}}">
                                                 <div class="modal-dialog  modal-sm" role="document">
@@ -67,7 +67,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </form>
+
                                         @endforeach
                                     </tbody>
                                 </table>

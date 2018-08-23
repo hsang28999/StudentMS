@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ClassesTableSeeder extends Seeder
 {
@@ -11,31 +12,15 @@ class ClassesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('classes')->insert([
-           [
-               'className' => 'C001',
-               'teachers_teacherId' => 1
-           ],
-            [
-                'className' => 'C002',
-                'teachers_teacherId' => 2
-            ],
-            [
-                'className' => 'C003',
-                'teachers_teacherId' => 3
-            ],
-            [
-                'className' => 'C004',
-                'teachers_teacherId' => 4
-            ],
-            [
-                'className' => 'C005',
-                'teachers_teacherId' => 5
-            ],
-            [
-                'className' => 'C006',
-                'teachers_teacherId' => 6
-            ]
-        ]);
+        for ($i = 0;$i <15;$i++){
+            DB::table('classes')->insert([
+                [
+                    'className' => 'C00'.($i+1),
+                    'teachers_teacherId' => mt_rand(1,20)
+                ]
+
+            ]);
+        }
+
     }
 }

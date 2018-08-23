@@ -24,23 +24,24 @@
                             </h2>
                         </div>
                         <div class="body">
-                            <form class="form-horizontal">
-                                <div class="row clearfix">
-                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="">Class Name</label>
-                                    </div>
-                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                        <div class="form-group">
-                                            <div class="">
-                                                <select name="" id="">
-                                                    <option value="">One</option>
-                                                    <option value="">Two</option>
-                                                    <option value="">Three</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <form class="form-horizontal" method="POST" action="">
+                                @csrf
+                                {{--<div class="row clearfix">--}}
+                                    {{--<div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">--}}
+                                        {{--<label for="">Class Name</label>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<div class="">--}}
+                                                {{--<select name="classId" id="">--}}
+                                                    {{--@foreach($class as $item)--}}
+                                                    {{--<option value="{{$item -> classId}}">{{$item -> className}}</option>--}}
+                                                    {{--@endforeach--}}
+                                                {{--</select>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="">Teacher Name</label>
@@ -48,26 +49,10 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="">
-                                                <select name="" id="">
-                                                    <option value="">One</option>
-                                                    <option value="">Two</option>
-                                                    <option value="">Three</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row clearfix">
-                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="">Type</label>
-                                    </div>
-                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                        <div class="form-group">
-                                            <div class="">
-                                                <select name="" id="">
-                                                    <option value="">One</option>
-                                                    <option value="">Two</option>
-                                                    <option value="">Three</option>
+                                                <select name="teacherId" id="">
+                                                    @foreach($teacher as $item)
+                                                        <option value="{{$item -> teacherId}}">{{$item -> teacherName}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
@@ -80,7 +65,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="" class="form-control" placeholder="">
+                                                <input name="passMark" step="0.01" type="number" id="" class="form-control" placeholder="">
                                             </div>
                                         </div>
                                     </div>
@@ -92,7 +77,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="" class="form-control" placeholder="">
+                                                <input name="finalMark" step="0.01" type="number" id="" class="form-control" placeholder="">
                                             </div>
                                         </div>
                                     </div>
@@ -104,38 +89,14 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="" class="form-control" placeholder="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row clearfix">
-                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="">Subject Author</label>
-                                    </div>
-                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                        <div class="form-group">
-                                            <div class="form-line">
-                                                <input type="text" id="" class="form-control" placeholder="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row clearfix">
-                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="">Subject Code</label>
-                                    </div>
-                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                        <div class="form-group">
-                                            <div class="form-line">
-                                                <input type="text" id="" class="form-control" placeholder="">
+                                                <input name="subjectName" type="text" id="" class="form-control" placeholder="">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row clearfix">
                                     <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
-                                        <button type="button" class="btn btn-primary m-t-15 waves-effect">Add subject</button>
+                                        <button type="submit" class="btn btn-primary m-t-15 waves-effect">Add subject</button>
                                     </div>
                                 </div>
                             </form>

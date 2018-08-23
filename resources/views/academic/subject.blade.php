@@ -42,8 +42,6 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Subject Name</th>
-                                    <th>Subject Author</th>
-                                    <th>Subject Code</th>
                                     <th>Teacher</th>
                                     <th>Pass Mark</th>
                                     <th>Final Mark</th>
@@ -52,266 +50,40 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>English</td>
-                                    <td>Hossain Mir	</td>
-                                    <td>ENG001</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td>40</td>
-                                    <td>100</td>
+                                @foreach($subject as $item)
+                                    <tr>
+                                    <td>{{$item -> subjectId}}</td>
+                                    <td>{{$item -> subjectName}}</td>
+                                    <td>{{$item -> teachers_teacherId}}</td>
+                                    <td>{{$item -> passMark}}</td>
+                                    <td>{{$item -> finalMark}}</td>
                                     <td>
                                         <button class="btn btn-info btn-sm">Mandatory</button>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
+                                        <a href="{{route('editSubject')}}?id={{$item -> subjectId}}" class="btn btn-small bg-lime waves-effect ">
                                             <i class="material-icons">edit</i>
                                         </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
+                                        <a href="javascript:void(0)" class="btn btn-small bg-red waves-effect">
+                                            <i class="material-icons" data-toggle="modal" data-target="#{{$item -> subjectId}}">delete</i>
                                         </a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>English</td>
-                                    <td>Hossain Mir	</td>
-                                    <td>ENG001</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td>40</td>
-                                    <td>100</td>
-                                    <td>
-                                        <button class="btn btn-info btn-sm">Mandatory</button>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>English</td>
-                                    <td>Hossain Mir	</td>
-                                    <td>ENG001</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td>40</td>
-                                    <td>100</td>
-                                    <td>
-                                        <button class="btn btn-info btn-sm">Mandatory</button>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>English</td>
-                                    <td>Hossain Mir	</td>
-                                    <td>ENG001</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td>40</td>
-                                    <td>100</td>
-                                    <td>
-                                        <button class="btn btn-info btn-sm">Mandatory</button>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>English</td>
-                                    <td>Hossain Mir	</td>
-                                    <td>ENG001</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td>40</td>
-                                    <td>100</td>
-                                    <td>
-                                        <button class="btn btn-info btn-sm">Mandatory</button>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>English</td>
-                                    <td>Hossain Mir	</td>
-                                    <td>ENG001</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td>40</td>
-                                    <td>100</td>
-                                    <td>
-                                        <button class="btn btn-info btn-sm">Mandatory</button>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>English</td>
-                                    <td>Hossain Mir	</td>
-                                    <td>ENG001</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td>40</td>
-                                    <td>100</td>
-                                    <td>
-                                        <button class="btn btn-info btn-sm">Mandatory</button>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>English</td>
-                                    <td>Hossain Mir	</td>
-                                    <td>ENG001</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td>40</td>
-                                    <td>100</td>
-                                    <td>
-                                        <button class="btn btn-info btn-sm">Mandatory</button>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>English</td>
-                                    <td>Hossain Mir	</td>
-                                    <td>ENG001</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td>40</td>
-                                    <td>100</td>
-                                    <td>
-                                        <button class="btn btn-info btn-sm">Mandatory</button>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>English</td>
-                                    <td>Hossain Mir	</td>
-                                    <td>ENG001</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td>40</td>
-                                    <td>100</td>
-                                    <td>
-                                        <button class="btn btn-info btn-sm">Mandatory</button>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>English</td>
-                                    <td>Hossain Mir	</td>
-                                    <td>ENG001</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td>40</td>
-                                    <td>100</td>
-                                    <td>
-                                        <button class="btn btn-info btn-sm">Mandatory</button>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>English</td>
-                                    <td>Hossain Mir	</td>
-                                    <td>ENG001</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td>40</td>
-                                    <td>100</td>
-                                    <td>
-                                        <button class="btn btn-info btn-sm">Mandatory</button>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>English</td>
-                                    <td>Hossain Mir	</td>
-                                    <td>ENG001</td>
-                                    <td>Dipok Kumar Halder</td>
-                                    <td>40</td>
-                                    <td>100</td>
-                                    <td>
-                                        <button class="btn btn-info btn-sm">Mandatory</button>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="btn btn-small bg-lime waves-effect ">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="#" class="btn btn-small bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </a>
-                                    </td>
-                                </tr>
+                                    <div class="modal fade" id="{{$item -> subjectId}}" tabindex="-1" role="dialog">
+                                        <input type="hidden" name="studentId" value="{{$item -> studentId}}">
+                                        <div class="modal-dialog  modal-sm" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    Are you sure to delete this!!!
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-link waves-effect deleteBtn" id="{{$item -> subjectId}}">Delete</button>
+                                                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -326,4 +98,5 @@
 <script>
     activeSection("academic","academic_subject");
 </script>
+<script src="{{asset('js/subject.js')}}"></script>
 @endsection
