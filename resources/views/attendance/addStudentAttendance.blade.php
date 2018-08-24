@@ -52,7 +52,7 @@
                                             @else
                                                 <option value="">-- Please select session --</option>
                                                 @foreach($sessionWithSubject as $item)
-                                                     <option value="{{$item -> sessionId}}">{{$item -> subjectName}}</option>
+                                                     <option value="{{$item -> sessionId}}" @if(isset($currentSessionId) && $item -> sessionId == $currentSessionId )selected @endif>{{$item -> subjectName}}</option>
                                                  @endforeach
                                             @endif
 

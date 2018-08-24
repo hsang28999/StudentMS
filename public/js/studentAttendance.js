@@ -9,8 +9,9 @@ $('#classLabel').change(function () {
 $('#submitBtn').click(function () {
 
     // while ()
-    console.log($('#atendanceCheckBox').children()[0]);
-    var formData = new FormData();
+    // console.log($('#atendanceCheckBox').children()[0]);
+    // var formData = new FormData();
+    var data = [];
     $('.attendanceCheck:checked').each(function (index,item) {
         var obj = {
             studentAttendanceValue : item.value,
@@ -18,16 +19,20 @@ $('#submitBtn').click(function () {
         }
         data.push(obj);
     })
-    console.log(data)
+    // var myJSON = JSON.stringify(data);
+    // console.log(myJSON)
     $.ajax({
         method: 'POST',
         url: window.location.pathname ,
         data: {
             '_token': $('meta[name="csrf-token"]').attr('content'),
-            'dataAtendance': data
+            'dataAtendance': JSON.stringify(data),
+            'seasionId' : $('#sessionLabel').val()
         },
+        // contentType: 'application/json',
+
         success: function (resp) {
-            alert('Success')
+            console.log(resp);
 
         },
         error: function () {

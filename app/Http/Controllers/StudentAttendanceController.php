@@ -6,6 +6,7 @@ use App\Classes;
 use App\SchoolDay;
 use App\Session;
 use App\Student;
+use App\StudentAttendance;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -53,7 +54,8 @@ class StudentAttendanceController extends Controller
                         -> with('schoolDay',$schooldayId)
                         -> with('classId',Input::get('classId'))
                         -> with('sessionWithSubject',$sessionWithSubject)
-                        -> with('student',@$student);
+                        -> with('student',$student)
+                        -> with('currentSessionId',Input::get('sessionId'));
                 }
 
                 return view('attendance.addStudentAttendance')  -> with('class',$class)
@@ -84,8 +86,18 @@ class StudentAttendanceController extends Controller
 
     }
     public function store(){
-        dump(Input::get('data'));
-        error_log($data);
-        return redirect() -> route('test');
+        $JSONdata = Input::get('dataAtendance');
+        $data =  json_decode($JSONdata);
+        $sessionId = Input::get('seasionId');
+        for ($i = 0; $i < count($data);$i++){
+            $atendanceStudent = new StudentAttendance();
+            $atendanceStudent -> studentAttendanceValue = $data[$i] -> studentAttendanceValue;
+            $atendanceStudent -> students_studentId = $data[$i] -> students_studentId;
+            $atendanceStudent -> sessions_sessionId = $sessionId;
+            $atendanceStudent -> save();
+        }
+
+
+        return $data;
     }
 }
