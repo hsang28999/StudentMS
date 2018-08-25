@@ -12,5 +12,8 @@ class Student extends Model
 //    protected  $dateFormat = 'dd-mm-yy';
     public function mark(){
     	return $this->belongsTo('App\student', 'students_studentId', 'markId');
+
+    public function class(){
+    	return $this->belongsTo('App\Class', 'classes_classId', 'studentId');
     }
 }
