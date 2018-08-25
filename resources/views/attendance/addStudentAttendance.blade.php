@@ -37,23 +37,27 @@
                                     <div class="col-sm-3">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input disabled value="{{\Carbon\Carbon::now()->toDateString()}}" type="text" class="datepicker form-control" placeholder="Please choose a date...">
+                                                <input disabled value="{{\Carbon\Carbon::now('Asia/Ho_Chi_Minh') -> toDateString()}}" type="text" class="datepicker form-control" placeholder="Please choose a date...">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
-
+    {{--{{dump($noSchoolDay)}}--}}
                                         <select class="form-control show-tick" id="sessionLabel">
+                                            @if(isset($noSchoolDay))
+                                                <option value="">Choose Class</option>
 
-                                            @if($schoolDay == null)
+                                            @elseif($schoolDay == null)
                                                 <option value="">No Lession Today</option>
                                             @else
-                                            <option value="">-- Please select session --</option>
-                                            @foreach($class as $classItem)
-                                                <option value="{{$classItem -> classId}}" @if(isset($classId) && $classItem -> classId == $classId) selected @endif>{{$classItem -> className}}</option>
-                                            @endforeach
+                                                <option value="">-- Please select session --</option>
+                                                @foreach($sessionWithSubject as $item)
+                                                     <option value="{{$item -> sessionId}}" @if(isset($currentSessionId) && $item -> sessionId == $currentSessionId )selected @endif>{{$item -> subjectName}}</option>
+                                                 @endforeach
                                             @endif
+
                                         </select>
+
                                     </div>
                                     <div>
                                         <button type="button" class="btn bg-teal waves-effect" data-target="" data-toggle="collapse" id="searchBtn">Attendance</button>
@@ -77,13 +81,13 @@
                                                             <td>{{$studentItem -> classes_classId}}</td>
                                                             <td>{{$studentItem -> studentCode}}</td>
                                                             <td>
-                                                                <div class="form-group">
-                                                                    <input type="radio" name="gender" id="present" class="with-gap">
-                                                                    <label for="present">Present</label>
-                                                                    <input type="radio" name="gender" id="absent" class="with-gap">
-                                                                    <label for="absent" class="m-l-20">Absent</label>
-                                                                    <input type="radio" name="gender" id="p_absent" class="with-gap">
-                                                                    <label for="p_absent" class="m-l-20">P_Absent</label>
+                                                                <div class="form-group" id="atendanceCheckBox">
+                                                                    <input value="1" type="radio" name="{{$studentItem -> studentId}}" id="present_{{$studentItem -> studentId}}" class="with-gap attendanceCheck">
+                                                                    <label for="present_{{$studentItem -> studentId}}">Present</label>
+                                                                    <input value="0" type="radio" name="{{$studentItem -> studentId}}" id="absent_{{$studentItem -> studentId}}" class="with-gap attendanceCheck">
+                                                                    <label for="absent_{{$studentItem -> studentId}}" class="m-l-20">Absent</label>
+                                                                    <input value="2" type="radio" name="{{$studentItem -> studentId}}" id="p_absent_{{$studentItem -> studentId}}" class="with-gap attendanceCheck">
+                                                                    <label for="p_absent_{{$studentItem -> studentId}}" class="m-l-20">P_Absent</label>
                                                                 </div>
                                                             </td>
                                                         </tr>
@@ -91,7 +95,7 @@
                                                     @endif
                                                     </tbody>
                                                 </table>
-                                                <button class="btn btn-success pull-right">Submit</button>
+                                                <button type="button" class="btn btn-success pull-right" id="submitBtn">Submit</button>
                                             </div>
                                         </div>
                                     </div>

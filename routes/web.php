@@ -17,6 +17,9 @@ Route::get('/',[
         return view('layout');
     }
 ]);
+
+/*==========================ROUTE TEACHER================================================*/
+
 Route::group(['prefix' => 'teacher'],function (){
 
     Route::get('/',[
@@ -44,25 +47,28 @@ Route::group(['prefix' => 'teacher'],function (){
     Route::get('/{teacherId}/delete', 'TeacherController@delete');
 });
 
-/*==============================================================*/
+/*=========================ROUTE ACADEMIC=====================================*/
 
 Route::group(['prefix' => 'academic'],function (){
+
     Route::group(['prefix' => 'academic_class'],function (){
         Route::get('',[
-            'as' => 'class',function() {
-                return view('academic.class');
-            }
+            'as' => 'class',
+            'uses' => 'ClassController@index'
         ]);
-        Route::get('create',[
-            'as' => 'createClass',function(){
-                return view('academic.addClass');
-            }
+        Route::get('/add',[
+            'as' => 'addClass',
+            'uses' => 'ClassController@create'
         ]);
-        Route::get('edit/{id}',[
-            'as' => 'editClass',function(){
-                return view('academic.editClass');
-            }
+        Route::post('/add', 'ClassController@store');
+
+        Route::get('/{classId}/edit',[
+            'as' => 'editClass',
+            'uses' => 'ClassController@edit'
         ]);
+        Route::post('/{classId}/edit', 'ClassController@update');
+
+        Route::get('/{classId}/delete', 'ClassController@delete');
     });
 
 
@@ -115,7 +121,7 @@ Route::group(['prefix'=> 'mark'],function(){
     }]);
 });
 
-/*==============ROUTE STUDENT=========================*/
+/*=========================ROUTE STUDENT=======================================*/
 
 Route::group(['prefix' => 'student'],function (){
     Route::get('/',[
@@ -130,8 +136,9 @@ Route::group(['prefix' => 'student'],function (){
         'as' => 'addStudent',
         'uses' => 'StudentController@add'
     ]);
-    Route::post('/add',['as' => 'addStudent',
-                        'uses' => 'StudentController@store']);
+    Route::post('/add',[
+        'as' => 'addStudent',
+        'uses' => 'StudentController@store']);
     Route::get('/edit/{id}',[
         'as' => 'editStudent',
         'uses' => 'StudentController@edit'
@@ -152,7 +159,7 @@ Route::group(['prefix' => 'student'],function (){
 });
 
 
-/*==================ROUTE ATTENDANCE==============================*/
+/*=====================================ROUTE ATTENDANCE==============================*/
 
 Route::group(['prefix' => 'attendance'],function (){
 
@@ -165,9 +172,9 @@ Route::group(['prefix' => 'attendance'],function (){
             'as' => 'add_attendance_student',
             'uses' => 'StudentAttendanceController@attendance'
         ]);
-        Route::get('attendance/{id}',[
-            'as' => 'getAttendance',
-            'uses' => 'StudentAttendanceController@attendanceSearchClass'
+        Route::post('attendance',[
+            'as' => 'storeAtendance',
+            'uses' => 'StudentAttendanceController@store'
         ]);
         Route::get('view',[
             'as' => 'view_attendance_student',function(){
@@ -212,3 +219,6 @@ Route::group(['prefix' => 'timeTable'],function (){
      ]);
 });
 
+Route::get('test',['as' => 'testRoute',function(){
+    return 1;
+}]);
