@@ -52,7 +52,7 @@
                                             @else
                                                 <option value="">-- Please select session --</option>
                                                 @foreach($sessionWithSubject as $item)
-                                                     <option value="{{$item -> sessionId}}" @if(isset($currentSessionId) && $item -> sessionId == $currentSessionId )selected @endif>{{$item -> subjectName}}</option>
+                                                     <option value="{{$item -> sessionId}}" >{{$item -> subjectName}}</option>
                                                  @endforeach
                                             @endif
 
@@ -84,9 +84,9 @@
                                                                 <div class="form-group" id="atendanceCheckBox">
                                                                     <input value="1" type="radio" name="{{$studentItem -> studentId}}" id="present_{{$studentItem -> studentId}}" class="with-gap attendanceCheck">
                                                                     <label for="present_{{$studentItem -> studentId}}">Present</label>
-                                                                    <input value="0" type="radio" name="{{$studentItem -> studentId}}" id="absent_{{$studentItem -> studentId}}" class="with-gap attendanceCheck">
+                                                                    <input value="0" type="radio" name="{{$studentItem -> studentId}}" id="absent_{{$studentItem -> studentId}}" class="with-gap attendanceCheck" checked>
                                                                     <label for="absent_{{$studentItem -> studentId}}" class="m-l-20">Absent</label>
-                                                                    <input value="2" type="radio" name="{{$studentItem -> studentId}}" id="p_absent_{{$studentItem -> studentId}}" class="with-gap attendanceCheck">
+                                                                    <input value="2" type="radio" name="{{$studentItem -> studentId}}" id="p_absent_{{$studentItem -> studentId}}" class="with-gap attendanceCheck" >
                                                                     <label for="p_absent_{{$studentItem -> studentId}}" class="m-l-20">P_Absent</label>
                                                                 </div>
                                                             </td>

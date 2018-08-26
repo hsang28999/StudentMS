@@ -116,7 +116,7 @@
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input name="email" type="text" class="form-control" placeholder="abc@example.com">
+                                                    <input name="address" type="text" class="form-control" placeholder="">
                                                 </div>
                                             </div>
                                         </div>

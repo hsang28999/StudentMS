@@ -15,46 +15,24 @@
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Action</th>
-                                        </tr>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Action</th>
+                                    </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($teachers as $key => $teacher)
                                         <tr>
-                                            <td>1</td>
-                                            <td>Johnson Crusor</td>
-                                            <td>ABC@gmail.com</td>
+                                            <td>{{$key+1}}</td>
+                                            <td>{{$teacher -> teacherName}}</td>
+                                            <td>{{$teacher -> email}}</td>
                                             <td>
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('view_attendance_teacher')}}"><i class="material-icons">remove_red_eye</i></a></button>
+                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('view_attendance_teacher',['id'=>$teacher -> teacherId])}}"><i class="material-icons">remove_red_eye</i></a></button>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Diana Rejex</td>
-                                            <td>ABC@gmail.com</td>
-                                            <td>
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('view_attendance_teacher')}}"><i class="material-icons">remove_red_eye</i></a></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Alex Panther</td>
-                                            <td>ABC@gmail.com</td>
-                                            <td>
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('view_attendance_teacher')}}"><i class="material-icons">remove_red_eye</i></a></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Loren Carlet</td>
-                                            <td>ABC@gmail.com</td>
-                                            <td>
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('view_attendance_teacher')}}"><i class="material-icons">remove_red_eye</i></a></button>
-                                            </td>
-                                        </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>

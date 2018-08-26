@@ -2,13 +2,7 @@
 @section('section')
 	<section class="content">
 	        <div class="container-fluid">
-	            <div class="bc-icons-2">
-	                <ol class="breadcrumb indigo lighten-4">
-	                    <li class="breadcrumb-item"><a class="black-text" href="../../../index.html">Home</a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
-	                    <li class="breadcrumb-item"><a class="black-text" href="../student.html">Student</a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
-	                    <li class="breadcrumb-item active"><a class="black-text" href="#">Student View</a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>      
-	                </ol>
-	            </div>
+
 	            <!-- Example Tab -->
 	            <div class="row">
 	                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -40,7 +34,7 @@
 	                                </div>
 	                                <div role="tabpanel" class="tab-pane fade" id="attendance1">
 	                                	<div id="hide-table">
-	                                    	
+
 					                    </div>
 	                                </div>
 	                                <div role="tabpanel" class="tab-pane fade" id="mark1">
@@ -50,7 +44,7 @@
 										   		<th rowspan="2">Subject</th>
 										    	<td colspan="3">Final Exam</td>
 										    	<td colspan="3">Final Exam Resit</td>
-										    </tr>									  
+										    </tr>
 										    <tr>
 										      <td>Assigment</td>
 										      <td>Practical</td>

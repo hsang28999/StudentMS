@@ -8,17 +8,10 @@
                 <div class="card">
                     <div class="header">
                         <ol class="breadcrumb pull-right m-t--15">
-                            <li>
-                                <a href="javascript:void(0);">
-                                    <i class="fas fa-briefcase"></i> Teacher
-                                </a>
-                            </li>
-                            <li lass="active">
 
-                            </li>
                         </ol>
                         <h2 style="display: inline">
-                            TEACHER DETAIL
+                            SUBJECT
                         </h2>
 
                     </div>
@@ -27,12 +20,6 @@
                             <a href="{{route('createSubject')}}">
                                 <button class="btn btn-success">ADD SUBJECT</button>
                             </a>
-
-                            <select class=" show-tick pull-right" >
-                                <option>One</option>
-                                <option>Two</option>
-                                <option>Three</option>
-                            </select>
                         </div>
 
 
@@ -42,7 +29,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Subject Name</th>
-                                    <th>Teacher</th>
+                                    <th>Teacher Name</th>
                                     <th>Pass Mark</th>
                                     <th>Final Mark</th>
                                     <th>Type</th>
@@ -54,7 +41,7 @@
                                     <tr>
                                     <td>{{$item -> subjectId}}</td>
                                     <td>{{$item -> subjectName}}</td>
-                                    <td>{{$item -> teachers_teacherId}}</td>
+                                    <td>{{$item -> teacherName}}</td>
                                     <td>{{$item -> passMark}}</td>
                                     <td>{{$item -> finalMark}}</td>
                                     <td>
@@ -70,7 +57,7 @@
                                     </td>
                                 </tr>
                                     <div class="modal fade" id="{{$item -> subjectId}}" tabindex="-1" role="dialog">
-                                        <input type="hidden" name="studentId" value="{{$item -> studentId}}">
+                                        <input type="hidden" name="studentId" value="{{$item -> subjectId}}">
                                         <div class="modal-dialog  modal-sm" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-body">
