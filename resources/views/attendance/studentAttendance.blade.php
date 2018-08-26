@@ -9,24 +9,26 @@
                         <div class="header">
                             <h2>
                                 <a href="{{route('add_attendance_student')}}">
-                                    <button class="btn btn-success">ADD STUDENT ATTENDANCE</button>
+                                    <button class="btn btn-success"> STUDENT ATTENDANCE</button>
                                 </a>
                             </h2>
-                            <ul class="header-dropdown m-r--5">
-                                <select class="mdb-select">
-                                    <option value="" disabled selected>Select Class</option>
-                                    @foreach($class as $classItem)
-                                    <option value="{{$classItem -> classId}}"> {{$classItem -> className}}</option>
-                                    @endforeach
-                                </select>
-                            </ul>
+
                         </div>
                         <div class="body">
+                            <form id="submit" method="get" action="">
+                                    <select class="mdb-select" name="class">
+                                        <option value="" disabled selected>Select Class</option>
+                                        @foreach($class as $classItem)
+                                            <option value="{{$classItem -> classId}}" @if($classItem -> classId == app('request')->input('class')) selected @endif> {{$classItem -> className}}</option>
+                                        @endforeach
+                                    </select>
+                                <button class="btn bg-deep-purple waves-effect" type="submit">Find</button>
+                            </form>
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
+                                            <th>#</th>
                                             <th>Name</th>
                                             <th>Class</th>
                                             <th>Email</th>
@@ -34,14 +36,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($student as $studentItem)
+                                    @foreach($student as $key => $studentItem)
                                         <tr>
-                                            <td>{{$studentItem -> studentId}}</td>
+                                            <td>{{$key+1}}</td>
                                             <td>{{$studentItem -> studentName}}</td>
-                                            <td>{{$studentItem -> classes_classId}}</td>
+                                            <td>{{$studentItem -> className}}</td>
                                             <td>{{$studentItem -> email}}</td>
                                             <td>
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('view_attendance_student')}}/{{$studentItem -> studentId}}"><i class="material-icons">remove_red_eye</i></a></button>
+                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('view_attendance_student',['id'=>$studentItem -> studentId])}}"><i class="material-icons">remove_red_eye</i></a></button>
                                             </td>
                                         </tr>
                                     @endforeach

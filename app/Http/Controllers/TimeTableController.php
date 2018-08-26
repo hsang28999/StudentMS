@@ -41,12 +41,8 @@ class TimeTableController extends Controller
                 }
                 $sessionArray = array("sessions"=>$sessions,"dayValue"=>$schoolDay->dayValue);
                 array_push($timeTableArray,$sessionArray);
-
-
         }
-//        dd($timeTableArray[0]['sessions'][0]['subjectName']);
-
-     return view('timeTable.viewTimeTable')->with(['timeTable'=>$timeTableArray]);
+        return view('timeTable.viewTimeTable')->with(['timeTable'=>$timeTableArray]);
     }
 
     public function getTimeTable(){
@@ -59,13 +55,13 @@ class TimeTableController extends Controller
     {
         $timeTable = json_decode($request->timeTable, true);
         for ($i = 0; $i < count($timeTable['timeTable']); $i++) {
-            $tables = $timeTable['timeTable'][0];
-            $checkSchoolDay = SchoolDay::Where([['dayValue', $tables['dayValue'] ],['classes_classId', $timeTable['class']]])->get();
-            if(count($checkSchoolDay) != 0){
-                foreach ($checkSchoolDay as $scd) {
-                    $scd->delete();
-                }
-            }
+            $tables = $timeTable['timeTable'][$i];
+//            $checkSchoolDay = SchoolDay::Where([['dayValue', $tables['dayValue'] ],['classes_classId', $timeTable['class']]])->get();
+//            if(count($checkSchoolDay) != 0){
+//                foreach ($checkSchoolDay as $scd) {
+//                    $scd->delete();
+//                }
+//            }
             $schoolDays = new SchoolDay();
             $schoolDays->dayValue = $tables['dayValue'];
             $schoolDays->classes_classId = $timeTable['class'];

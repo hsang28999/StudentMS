@@ -20,7 +20,6 @@
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover dataTable">
                                     <thead>
-                                    @foreach($classes as $key => $class)
                                     <tr>
                                         <th>#</th>
                                         <th>Class</th>
@@ -29,6 +28,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($classes as $key => $class)
                                     <tr>
                                         <td>{{$key+1}}</td>
                                         <td>{{$class->className}}</td>

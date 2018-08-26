@@ -15,11 +15,40 @@ use Illuminate\Support\Facades\Input;
 
 class StudentAttendanceController extends Controller
 {
-    public function index(){
-        $student = Student::all();
+    public function index(Request $request){
+
         $class = Classes::all();
-        return view('attendance.studentAttendance') -> with('student',$student)
-            -> with('class',$class );
+        $student = DB::table('students')
+            ->join('classes', 'classes.classId', '=', 'students.classes_classId')
+            ->select('students.*','classes.className')
+            ->where('classes.classId', '=',$request->class)
+            ->get();
+        return view('attendance.studentAttendance') -> with(['class'=>$class,'student'=>$student] );
+    }
+
+    public function viewStudent($id){
+        $timeTableArray = array();
+        $student = DB::table('students')->where('studentId',$id)->first();
+
+        $schoolDays = SchoolDay::where('classes_classId',$student->classes_classId)->get();
+        foreach ($schoolDays as $schoolDay){
+            $sessions = DB::table('sessions')
+                ->join('subjects', 'sessions.subjects_subjectId', '=', 'subjects.subjectId')
+                ->join('student_attendances', 'student_attendances.sessions_sessionId', '=', 'sessions.sessionId')
+                ->select('sessions.*','subjects.subjectName','student_attendances.studentAttendanceValue')
+                ->where('sessions.school_days_schoolDayId', '=',$schoolDay->schoolDayId)
+                ->where('student_attendances.students_studentId', '=',$id)
+                ->get()->toArray();
+            if(count($sessions)>0){
+                for($j = 0;$j<count($sessions);$j++){
+                    $sessions[$j] = (array)$sessions[$j];
+                }
+                $sessionArray = array("sessions"=>$sessions,"dayValue"=>$schoolDay->dayValue);
+                array_push($timeTableArray,$sessionArray);
+            }
+        }
+
+        return view('attendance.viewStudentAttendance')->with(['timeTable'=>$timeTableArray]);
     }
 
     /**
@@ -33,7 +62,7 @@ class StudentAttendanceController extends Controller
                 ['classes_classId',Input::get('classId') ],
                 ['dayValue',Carbon::now('Asia/Ho_Chi_Minh')-> toDateString()]
             ]) -> first();
-//            dump($schooldayId -> schoolDayId);
+
             if ($schooldayId == null){
                 return view('attendance.addStudentAttendance')  -> with('class',$class)
 //                -> with('student',$student)
@@ -42,9 +71,9 @@ class StudentAttendanceController extends Controller
             }else{
 //                $session = Session::where('school_days_schoolDayId',$schooldayId -> classes_classId) -> get();
                 $sessionWithSubject = DB::table('sessions')
-                                        -> join('subjects','sessions.subjects_subjectId','=','subjectId')
+                                        -> join('subjects','sessions.subjects_subjectId','=','subjects.subjectId')
                                         -> select('sessions.*','subjects.subjectName')
-                                        ->where('school_days_schoolDayId',$schooldayId -> classes_classId)
+                                        ->where('school_days_schoolDayId',$schooldayId -> schoolDayId)
                                         -> get();
                 if (Input::has('classId') && Input::has('sessionId') ){
 

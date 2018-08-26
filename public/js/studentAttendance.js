@@ -15,12 +15,13 @@ $('#submitBtn').click(function () {
     $('.attendanceCheck:checked').each(function (index,item) {
         var obj = {
             studentAttendanceValue : item.value,
-            students_studentId : item.name
+            students_studentId : item.name,
+            sessionId: item.title
         }
         data.push(obj);
     })
     // var myJSON = JSON.stringify(data);
-    // console.log(myJSON)
+    console.log(data);
     $.ajax({
         method: 'POST',
         url: window.location.pathname ,
@@ -33,6 +34,7 @@ $('#submitBtn').click(function () {
 
         success: function (resp) {
             console.log(resp);
+            alert('Attendance Success !');
 
         },
         error: function () {

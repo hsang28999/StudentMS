@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Teacher;
-use Illuminate\Validation\Validator;
 
 
 class TeacherController extends Controller
@@ -22,11 +21,6 @@ class TeacherController extends Controller
     	$gender = $allRequest['gender'];
     	$dateOfBirth = $allRequest['dateOfBirth'];
     	$phone = $allRequest['phone'];
-
-        $request->validate([
-            'teacherName' => 'require',
-            'joiningDate' => 'require',
-        ]);
 
     	$insertData = array(
     		'teacherName' => $teacherName,
@@ -65,7 +59,7 @@ class TeacherController extends Controller
     public function update(Request $request,$teacherId){
 
         $allRequest = $request->all();
-        $teacherId = $allRequest['teacherId'];	
+        $teacherId = $allRequest['teacherId'];
         $teacherName = $allRequest['teacherName'];
     	$joiningDate = $allRequest['joiningDate'];
     	$dateOfBirth = $allRequest['dateOfBirth'];
@@ -73,7 +67,7 @@ class TeacherController extends Controller
     	$email = $allRequest['email'];
     	$phone = $allRequest['phone'];
     	$address = $allRequest['address'];
-        
+
 
         $teacher = new Teacher();
         $editById = $teacher->find($teacherId);

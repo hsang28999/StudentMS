@@ -1,6 +1,6 @@
 @extends('layout')
 @section('section')
-    <section class="content yyyymmdd">
+    <section class="content">
         <div class="container-fluid">
             <!-- Exportable Table -->
             <div class="row clearfix">
@@ -13,7 +13,7 @@
                             <ol class="breadcrumb pull-right m-t--15">
                                 <li>
                                     <a href="javascript:void(0);">
-                                        <i class="fas fa-user-tie"></i> Teacher Attendance
+                                        <i class="fas fa-users"></i> Teacher Attendance
                                     </a>
                                 </li>
                                 <li class="active">
@@ -24,100 +24,67 @@
                             </ol>
                         </div>
                         <form method="POST">
-                            {{ csrf_field() }}
                             <div class="body">
-                                <div class="row clearfix">
-                                    <div class="col-sm-5">
+                                <div class="row clearfix ddmmyyyyy">
+                                    <div class="col-sm-4">
+                                        <select class="form-control show-tick" id="classLabel" >
+                                            <option value="">-- Please select class --</option>
+                                            @foreach($class as $classItem)
+                                                <option value="{{$classItem -> classId}}" @if(isset($classId) && $classItem -> classId == $classId) selected @endif>{{$classItem -> className}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-3">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" class="datepicker form-control date" placeholder="Please choose a date...">
+                                                <input disabled value="{{\Carbon\Carbon::now('Asia/Ho_Chi_Minh') -> toDateString()}}" type="text" class="datepicker form-control" placeholder="Please choose a date...">
                                             </div>
                                         </div>
                                     </div>
+
                                     <div>
-                                        
-                                        <button type="button" class="btn bg-teal waves-effect" data-target="#show" data-toggle="collapse">Attendance</button>
-                                        
-                                        <div id="show" class="collapse col-xs-12"">
-                                            <table style="width: 100%;" class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                                                    <thead>
+                                        {{--<button type="button" class="btn bg-teal waves-effect" data-target="" data-toggle="collapse" id="searchBtn">Attendance</button>--}}
+                                        <div id="show" class="collapse col-xs-12 in">
+                                            <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                                <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Name</th>
+                                                    <th>Email</th>
+                                                    <th>Phone Number</th>
+                                                    <th>Attendance</th>
+                                                </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                @if(isset($teacher))
+                                                    @foreach($teacher as $key => $teachertItem)
                                                         <tr>
-                                                            <th rowspan="2">ID</th>
-                                                            <th rowspan="2">TeacherName</th>
-                                                            <th rowspan="2">Email</th>
-                                                            <th colspan="3">Attendance</th>
+                                                            <td>{{$key+1}}</td>
+                                                            <td>{{$teachertItem -> teacherName}}</td>
+                                                            <td>{{$teachertItem -> email}}</td>
+                                                            <td>{{$teachertItem -> phone}}</td>
+                                                            <td>
+                                                                <div class="form-group" id="atendanceCheckBox">
+                                                                    <input value="1" type="radio" name="{{$teachertItem -> teacherId}}" title="{{$teachertItem -> sessionId}}" id="present_{{$teachertItem -> teacherId}}" class="with-gap attendanceCheck">
+                                                                    <label for="present_{{$teachertItem -> teacherId}}">Present</label>
+                                                                    <input value="0" type="radio" name="{{$teachertItem -> teacherId}}" title="{{$teachertItem -> sessionId}}" id="absent_{{$teachertItem -> teacherId}}" class="with-gap attendanceCheck" checked>
+                                                                    <label for="absent_{{$teachertItem -> teacherId}}" class="m-l-20">Absent</label>
+                                                                    <input value="2" type="radio" name="{{$teachertItem -> teacherId}}" title="{{$teachertItem -> sessionId}}" id="p_absent_{{$teachertItem -> teacherId}}" class="with-gap attendanceCheck" >
+                                                                    <label for="p_absent_{{$teachertItem -> teacherId}}" class="m-l-20">P_Absent</label>
+                                                                </div>
+                                                            </td>
                                                         </tr>
-                                                        <tr name="attendance">
-                                                            <th value="1">P</th>
-                                                            <th value="2">PA</th>
-                                                            <th value="3">A</th>
-                                                        </tr>
-                                                    </thead>
-                                                    
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>1</td>
-                                                            <td>Johnson Crusor</td>
-                                                            <td>ABC@gmail.com</td>
-                                                            
-                                                                <th>    
-                                                                <div class="form-group">
-                                                                    <input type="radio" name="gender1" id="1" class="with-gap">
-                                                                    <label for="1"></label>
-                                                                </div>
-                                                                </th>
-
-                                                                <th>    
-                                                                <div class="form-group">
-                                                                    <input type="radio" name="gender1" id="2" class="with-gap">
-                                                                    <label for="2"></label>
-                                                                </div>
-                                                                </th>
-
-                                                                <th>    
-                                                                <div class="form-group">
-                                                                    <input type="radio" name="gender1" id="3" class="with-gap">
-                                                                    <label for="3"></label>
-                                                                </div>
-                                                                </th>
-
-                                                                
-
-                                                        </tr>
-                                                        <tr>
-                                                            <td>2</td>
-                                                            <td>Abebe</td>
-                                                            <td>ABC@gmail.com</td>
-                                                            
-                                                                <th>    
-                                                                <div class="form-group">
-                                                                    <input type="radio" name="gender2" id="present" class="with-gap">
-                                                                    <label for="present"></label>
-                                                                </div>
-                                                                </th>
-
-                                                                <th>    
-                                                                <div class="form-group">
-                                                                    <input type="radio" name="gender2" id="present_absent" class="with-gap">
-                                                                    <label for="present_absent"></label>
-                                                                </div>
-                                                                </th>
-
-                                                                <th>    
-                                                                <div class="form-group">
-                                                                    <input type="radio" name="gender2" id="absent" class="with-gap">
-                                                                    <label for="absent"></label>
-                                                                </div>
-                                                                </th>
-                                                        </tr>
-                                                    </tbody>
-                                                 </table> 
-                                                <button class="btn btn-success pull-right">Submit</button>
-                                            </div>
+                                                    @endforeach
+                                                @endif
+                                                </tbody>
+                                            </table>
+                                            <button type="button" class="btn btn-success pull-right" id="submitBtn">Submit</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </form>
                     </div>
                 </div>
@@ -125,7 +92,8 @@
         </div>
     </section>
 
-<script>
-    activeSection("attendance","attendance_teacher");
-</script>
+    <script>
+        activeSection("attendance","attendance_teacher");
+    </script>
+    <Script src="{{asset('js/studentAttendance.js')}}"></Script>
 @endsection

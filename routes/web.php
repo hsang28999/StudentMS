@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,16 +10,13 @@
 |
 */
 use App\Http\Controllers\Controller;
-
-Route::get('/',[
-    'as' => 'index', function () {
-        return view('layout');
-    }
-]);
-
-/*==========================ROUTE TEACHER================================================*/
-
-Route::group(['prefix' => 'teacher'],function (){
+Route::group(['middleware' => ['checkLogin']],function (){
+    Route::get('/',[
+        'as' => 'index', function () {
+            return view('layout');
+        }
+    ]) -> middleware('checkLogin');
+    Route::group(['prefix' => 'teacher'],function (){
 
     Route::get('/',[
         'as' => 'teacher',
@@ -176,41 +172,39 @@ Route::group(['prefix' => 'attendance'],function (){
             'as' => 'storeAtendance',
             'uses' => 'StudentAttendanceController@store'
         ]);
-        Route::get('view',[
-            'as' => 'view_attendance_student',function(){
-                return view('attendance.viewStudentAttendance');
-            }
+        Route::get('view/{id}',[
+            'as' => 'view_attendance_student',
+            'uses' => 'StudentAttendanceController@viewStudent'
         ]);
     });
 
 
     Route::group(['prefix' => 'attendance_teacher'],function (){
         Route::get('',[
-            'as' => 'attendance_teacher',function() {
-                return view('attendance.teacherAttendance');
-            }
+            'as' => 'attendance_teacher',
+            'uses' => 'TeacherAttendanceController@index'
         ]);
-        Route::get('create',[
-            'as' => 'add_attendance_teacher',function(){
-                return view('attendance.addTeacherAttendance');
-            }
+        Route::get('attendance',[
+            'as' => 'add_attendance_teacher',
+            'uses' => 'TeacherAttendanceController@attendance'
         ]);
-        Route::get('view',[
-            'as' => 'view_attendance_teacher',function(){
-                return view('attendance.viewTeacherAttendance');
-            }
+        Route::post('attendance',[
+            'as' => 'storeAtendance',
+            'uses' => 'TeacherAttendanceController@store'
+        ]);
+        Route::get('view/{id}',[
+            'as' => 'view_attendance_teacher',
+            'uses' => 'TeacherAttendanceController@viewTeacher'
         ]);
     });
 });
-
-Route::get('/test','TimeTableController@test');
 
 Route::group(['prefix' => 'timeTable'],function (){
     Route::get('/getSubjects','TimeTableController@getSubjects');
     Route::get('/',[
         'as' => 'timeTable','uses'=>'TimeTableController@getClass'
     ]);
-    Route::post('/','TimeTableController@saveTimeTableToDb');
+    Route::post('/addTimetable','TimeTableController@saveTimeTableToDb');
     Route::get('/view/{id}',[
         'as' => 'viewTimeTable','uses'=>'TimeTableController@viewTimeTable'
     ]);
@@ -218,7 +212,29 @@ Route::group(['prefix' => 'timeTable'],function (){
         'as' => 'addTimeTable','uses'=>'TimeTableController@getTimeTable'
      ]);
 });
-
+});
+//Auth::routes();
+Route::group(['prefix' => 'auth'],function(){
+    Route::get('login',[
+        'as' => 'auth.login', function(){
+            return view('auth.login');
+        }
+    ]);
+    Route::get('forgot',[
+        'as' => 'forgot-password', function(){
+            return view('auth.forgot-password');
+        }
+    ]);
+    Route::get('register',[
+        'as' => 'registerPage', function(){
+            return view('auth.register');
+        }
+    ]);
+    Route::post('login',['as' => 'login','uses' => 'Auth\LoginController@login']);
+    Route::post('logout' ,['as' => 'logout','uses' => 'Auth\LoginController@logout']);
+    Route::post('register' ,['as' => 'register','uses' => 'Auth\RegisterController@register']);
+});
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('test',['as' => 'testRoute',function(){
     return 1;
 }]);
