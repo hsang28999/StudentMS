@@ -110,12 +110,13 @@ function getSubjects() {
 function generateSubjectTable(count,day){
 
     var rows ='';
+    var subjectList = getSubjects();
     for (var i=1;i<=count;i++){
         rows += '                                   <li class="list-group-item section-table">\n' +
             '                                            <span class="badge float-left margin-bot-5">Session <span class="section-index">'+i+'</span></span>\n' +
             '                                            <select class="select-beast subject-selected" placeholder="Select a subject...">\n' +
             '                                                <option value="">Select a subject...</option>\n' +
-                                                                getSubjects()+
+            subjectList+
             '                                            </select>\n' +
             '                                        </li>\n';
     }
@@ -314,12 +315,14 @@ $('#list-date-button2').on('click','#submitTimetable',function () {
 function submitTimeTableToApi(timeTable) {
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
     var time_table = JSON.stringify(timeTable);
+    console.log(timeTable);
+    console.log(time_table);
     $.ajax({
         headers: {
             'X-CSRF-TOKEN': CSRF_TOKEN
         },
         type:"POST",
-        url: "timeTable",
+        url: "addTimetable",
         data: {timeTable : time_table},
         dataType: 'json',
         success: function(data){
@@ -327,3 +330,11 @@ function submitTimeTableToApi(timeTable) {
         }
     });
 }
+
+function convertDayValue() {
+    var string = $('.dayValue').text().split(" ")[0];
+    var stringArray = string.split('-');
+    var finalString = stringArray[2] + "/"+stringArray[1]+"/"+stringArray[0];
+    $('.dayValue').text(finalString);
+}
+convertDayValue();

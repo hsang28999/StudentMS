@@ -10,10 +10,8 @@ class Student extends Model
     public $timestamps = true;
 
 //    protected  $dateFormat = 'dd-mm-yy';
-    public function mark(){
-    	return $this->belongsTo('App\student', 'students_studentId', 'markId');
-
-    public function class(){
-    	return $this->belongsTo('App\Class', 'classes_classId', 'studentId');
+    public function mark()
+    {
+        return $this->belongsTo('App\student', 'students_studentId', 'markId');
     }
 }

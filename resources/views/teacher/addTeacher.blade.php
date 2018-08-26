@@ -24,7 +24,7 @@
                             </h2>
                         </div>
                         <div class="body container-fluid ">
-                            <form class="form-horizontal col-xs-8" action="{{URL::action('TeacherController@store')}}" method="POST">
+                            <form class="form-horizontal col-xs-8" action="" method="POST">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">

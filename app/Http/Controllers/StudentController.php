@@ -18,7 +18,7 @@ class StudentController extends Controller
     public function searchStudentByClass($id){
 
         $class = Classes::all();
-        $studentByClass = Student::where('classes_classId',"LIKE",'%'.$id . '%') -> get();
+        $studentByClass = Student::where('classes_classId',$id) -> get();
         return view('student.student') -> with('student',$studentByClass)
                                       -> with('class',$class );
     }
@@ -34,7 +34,7 @@ class StudentController extends Controller
         $student -> studentCode = Input::get('studentCode');
         $student -> email = Input::get('email');
         $student -> save();
-        return redirect() -> route('class');
+        return redirect() -> route('student');
 
     }
     public function add(){

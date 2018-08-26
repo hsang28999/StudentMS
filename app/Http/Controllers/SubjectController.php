@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Classes;
 use App\Subject;
 use App\Teacher;
+use Illuminate\Support\Facades\DB;
 use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -12,7 +13,10 @@ use Illuminate\Support\Facades\Input;
 class SubjectController extends Controller
 {
     public function index(){
-        $subject = Subject::all();
+        $subject = DB::table('subjects')
+            ->join('teachers', 'subjects.teachers_teacherId', '=', 'teachers.teacherId')
+            ->select('subjects.*','teachers.teacherName')
+            ->get();
 
         return view('academic.subject')-> with('subject',$subject);
     }

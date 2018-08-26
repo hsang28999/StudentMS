@@ -3,33 +3,36 @@
 	<section class="content">
         <div class="container-fluid">
             <div class="row clearfix">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
-                        <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                            <tbody>
-                                <tr>
-                                    <th>Name</th>
-                                    <td>Johnson Crusor</td>
-                                </tr>
-                                <tr>
-                                    <th>Class</th>
-                                    <td>T1707A</td>
-                                </tr>
-                                <tr>
-                                    <th>Phone</th>
-                                    <td>0128 235 5119</td>
-                                </tr>
-                                <tr>
-                                    <th>Email</th>
-                                    <td>ABC@gmail.com</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                    <div class="card">
-
+                        <div class="header">
+                            <ol class="breadcrumb pull-right m-t--15">
+                            </ol>
+                            <h2 style="display: inline">
+                                VIEW STUDENT ATTENDANCE
+                            </h2>
+                        </div>
+                        <div class="body">
+                            <div class="row" id="list-time-table">
+                                @foreach($timeTable as $table)
+                                    <div class="col-md-3">
+                                        <ul class="list-group time-table">
+                                            <li class="list-group-item list-group-bg-cyan text-center dayValue">{{$table['dayValue']}}</li>
+                                            @foreach($table['sessions'] as $session)
+                                                <li class="list-group-item section-table">
+                                                    <span class="badge float-left margin-bot-5">Session <span class="section-index">{{$session['sessionOrder']}}</span></span>
+                                                    @if($session['studentAttendanceValue']==1)<span class="badge btn-info float-right margin-bot-5">Present</span>
+                                                     @elseif($session['studentAttendanceValue']==2) <span class="badge btn-warning float-right margin-bot-5">Absent</span>
+                                                     @elseif($session['studentAttendanceValue']==0) <span class="badge btn-danger float-right margin-bot-5">P_Absent</span>
+                                                     @endif
+                                                    <p style="margin-left: 0px;margin-top:25px;">{{$session['subjectName']}}</p>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

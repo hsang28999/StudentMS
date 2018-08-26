@@ -176,41 +176,39 @@ Route::group(['prefix' => 'attendance'],function (){
             'as' => 'storeAtendance',
             'uses' => 'StudentAttendanceController@store'
         ]);
-        Route::get('view',[
-            'as' => 'view_attendance_student',function(){
-                return view('attendance.viewStudentAttendance');
-            }
+        Route::get('view/{id}',[
+            'as' => 'view_attendance_student',
+            'uses' => 'StudentAttendanceController@viewStudent'
         ]);
     });
 
 
     Route::group(['prefix' => 'attendance_teacher'],function (){
         Route::get('',[
-            'as' => 'attendance_teacher',function() {
-                return view('attendance.teacherAttendance');
-            }
+            'as' => 'attendance_teacher',
+            'uses' => 'TeacherAttendanceController@index'
         ]);
-        Route::get('create',[
-            'as' => 'add_attendance_teacher',function(){
-                return view('attendance.addTeacherAttendance');
-            }
+        Route::get('attendance',[
+            'as' => 'add_attendance_teacher',
+            'uses' => 'TeacherAttendanceController@attendance'
         ]);
-        Route::get('view',[
-            'as' => 'view_attendance_teacher',function(){
-                return view('attendance.viewTeacherAttendance');
-            }
+        Route::post('attendance',[
+            'as' => 'storeAtendance',
+            'uses' => 'TeacherAttendanceController@store'
+        ]);
+        Route::get('view/{id}',[
+            'as' => 'view_attendance_teacher',
+            'uses' => 'TeacherAttendanceController@viewTeacher'
         ]);
     });
 });
-
-Route::get('/test','TimeTableController@test');
 
 Route::group(['prefix' => 'timeTable'],function (){
     Route::get('/getSubjects','TimeTableController@getSubjects');
     Route::get('/',[
         'as' => 'timeTable','uses'=>'TimeTableController@getClass'
     ]);
-    Route::post('/','TimeTableController@saveTimeTableToDb');
+    Route::post('/addTimetable','TimeTableController@saveTimeTableToDb');
     Route::get('/view/{id}',[
         'as' => 'viewTimeTable','uses'=>'TimeTableController@viewTimeTable'
     ]);
@@ -219,6 +217,4 @@ Route::group(['prefix' => 'timeTable'],function (){
      ]);
 });
 
-Route::get('test',['as' => 'testRoute',function(){
-    return 1;
-}]);
+Route::get('/test','TimeTableController@saveTimeTableToDb');
