@@ -1,142 +1,132 @@
 @extends('layout')
-@section('section')  
-    <section class="content">
+@section('section')
+    <section class="content yyyymmdd">
         <div class="container-fluid">
-            <!--Breadcrumbs-->
-            <div class="bc-icons-2">
-                <ol class="breadcrumb indigo lighten-4">
-                    <li class="breadcrumb-item"><a class="black-text" href="../../../index.html">Home</a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="black-text" href="../student.html">Student</a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item active"><a class="black-text" href="#">Add Student</a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>      
-                </ol>
-            </div>
-            <!--#END# Breadcrumbs-->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
+                        <div class="header">
+                        <ol class="breadcrumb pull-right m-t--15">
+
+                        </ol>
+                        <h2 style="display: inline">
+                            ADD STUDENT
+                        </h2>
+                    </div>
                         <div class="body">
-                            <div class="table-responsive">
-                                <table class="col-xs-12">                                
-                                    <tbody>
-                                        <tr>
-                                            <td class="col-md-6">
-                                                <b>Name</b>
-                                                <div class="input-group input-group-lg">
-                                                    <span class="input-group-addon">
-                                                        <i class="material-icons">person</i>
-                                                    </span>
-                                                    <div class="form-line">
-                                                        <input type="text" class="form-control" placeholder="Username">
-                                                    </div>
+                                <form action="{{route('addStudent')}}" METHOD="POST">
+                                    @csrf
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="">Student Name</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" class="form-control" placeholder="Student Name" name="name">
                                                 </div>
-                                            </td>
-                                            <td  class="col-md-6">
-                                                <b>Phone Number</b>
-                                                <div class="input-group input-group-lg">
-                                                    <span class="input-group-addon">
-                                                        <i class="material-icons">phone_iphone</i>
-                                                    </span>
-                                                    <div class="form-line">
-                                                        <input type="text" class="form-control" placeholder="01282375119">
-                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="">Phone Number</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" class="form-control" placeholder="Ex: 01282375119" name="phone">
                                                 </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="col-md-6">
-                                                <p>
-                                                    <b>Class</b>
-                                                </p>
-                                                <div class="input-group input-group-lg">
-                                                    <span class="input-group-addon">
-                                                        <i class="material-icons">group</i>
-                                                    </span>
-                                                    <div class="form-line">
-                                                        <input type="text" class="form-control" placeholder="T1707A">
-                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="">Gender</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <select class="form-control show-tick" name="gender">
+                                                        <option value="">-- Please select --</option>
+                                                        <option value="1">Male</option>
+                                                        <option value="0">Female</option>
+                                                    </select>
                                                 </div>
-                                            </td>
-                                            <td class="col-md-6">
-                                                <p>
-                                                    <b>Country</b>
-                                                </p>
-                                                <div class="input-group input-group-lg">
-                                                    <span class="input-group-addon">
-                                                        <i class="material-icons">home</i>
-                                                    </span>
-                                                    <div class="form-line">
-                                                        <input type="text" class="form-control" placeholder="Ex: Hà Nội">
-                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="">Student Code</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" class="form-control" placeholder="Ex: A001" name="studentCode">
                                                 </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="col-md-6">
-                                                <b>Date</b>
-                                                <div class="input-group input-group-lg">
-                                                    <span class="input-group-addon">
-                                                        <i class="material-icons">date_range</i>
-                                                    </span>
-                                                    <div class="form-line">
-                                                        <input type="text" class="form-control date" placeholder="Ex: 30/07/2016">
-                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="">Date Of Birth</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="input-group">
+                                                <div class="form-line">
+                                                    <input type="text"  class="form-control date" placeholder="VD: 2016/07/26" name="birthday">
                                                 </div>
-                                            </td>
-                                            <td class="col-md-6">
-                                                <b>Gender</b>
-                                                <div class="input-group input-group-lg">
-                                                    <span class="input-group-addon">
-                                                        <i class="material-icons">wc</i>
-                                                    </span>
-                                                    <div class="form-line">
-                                                        <input type="text" class="form-control date" placeholder="Male or Female">
-                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="">Class</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <select class="form-control show-tick" name="studentClass">
+                                                        <option value="">-- Please select --</option>
+                                                        @foreach($class as $item)
+                                                            <option value="{{$item -> classId}}">{{$item -> className}}</option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="col-md-6">
-                                                <b>Email</b>
-                                                <div class="input-group input-group-lg">
-                                                    <span class="input-group-addon">
-                                                        <i class="material-icons">public</i>
-                                                    </span>
-                                                    <div class="form-line">
-                                                        <input type="text" class="form-control date" placeholder="abc@example.com">
-                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="">Email</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input name="email" type="text" class="form-control" placeholder="abc@example.com">
                                                 </div>
-                                            </td>
-                                            <td class="col-md-6">
-                                                <b>Religion</b>
-                                                <div class="input-group input-group-lg">
-                                                    <span class="input-group-addon">
-                                                        <i class="material-icons">local_library</i>
-                                                    </span>
-                                                    <div class="form-line">
-                                                        <input type="text" class="form-control date" placeholder="Male or Female">
-                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="">Address</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input name="email" type="text" class="form-control" placeholder="abc@example.com">
                                                 </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2">
-                                                <b>Address</b>
-                                                <div class="input-group input-group-lg">
-                                                    <span class="input-group-addon">
-                                                        <i class="material-icons">location_on</i>
-                                                    </span>
-                                                    <div class="form-line">
-                                                        <input type="text" class="form-control date" placeholder="8A - Tôn Thất Thuyết - Mỹ Đình 2- Cầu Giấy - Hà Nội">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>                                      
-                                    </tbody>
-                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary m-t-15 waves-effect">Add Student</button>
+                                </form>
                             </div>
                         </div>
                     </div>
-                </div>
+
             </div>
         </div>
     </section>

@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Welcome To | Bootstrap Based Admin Template - Material Design</title>
     <!-- Favicon-->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -31,10 +32,16 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{{ asset('css/themes/all-themes.css') }}" rel="stylesheet" />
+    <!--Selectize-->
+    <link href="{{ asset('css/selectize.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/selectize.default.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/custom.css')}}">
 
     <!-- Bootstrap Select Css -->
     <link href="{{asset('plugins/bootstrap-select/css/bootstrap-select.css')}}" rel="stylesheet" />
+    <link href="{{asset('plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css')}}" rel="stylesheet" />
+    <!-- Jquery Core Js -->
+    <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
 </head>
 
 <body class="theme-red">
@@ -153,13 +160,13 @@
                     </a>
                     <ul class="ml-menu">
                         <li id="attendance_student">
-                            <a href="{{route('student_attendance')}}">
+                            <a href="{{route('attendance_student')}}">
                                 <i class="fas fa-users"></i>
                                 <span>Student Attendance</span>
                             </a>
                         </li>
                         <li id="attendance_teacher">
-                            <a href="{{route('teacher_attendance')}}">
+                            <a href="{{route('attendance_teacher')}}">
                                 <i class="fas fa-user-tie" ></i>
                                 <span>Teacher Attendance</span>
                             </a>
@@ -170,6 +177,12 @@
                     <a href="{{route('mark')}}">
                         <i class="fas fa-clipboard-check" style="font-size: 19px"></i>
                         <span>Mark</span>
+                    </a>
+                </li>
+                <li id="timeTable">
+                    <a href="{{route('timeTable')}}">
+                        <i class="fas fa-calendar-alt" style="font-size: 19px"></i>
+                        <span>Time Table</span>
                     </a>
                 </li>
             </ul>
@@ -309,10 +322,17 @@
 <script src="{{ asset('plugins/jquery-datatable/extensions/export/vfs_fonts.js') }}"></script>
 <script src="{{ asset('plugins/jquery-datatable/extensions/export/buttons.html5.min.js') }}"></script>
 <script src="{{ asset('plugins/jquery-datatable/extensions/export/buttons.print.min.js') }}"></script>
-
+<script src="{{ asset('plugins/jquery-inputmask/jquery.inputmask.bundle.js')}}"></script>
+<script src="{{ asset('plugins/momentjs/moment.js')}}"></script>
+<script src="{{ asset('plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js')}}"></script>
+<!-- <script src="{{ asset('js/pages/forms/basic-form-elements.js')}}"></script> -->
 <!-- Custom Js -->
 <script src="{{ asset('js/admin.js') }}"></script>
 <script src="{{ asset('js/pages/tables/jquery-datatable.js') }}"></script>
+<!--Selectize-->
+<script src="{{ asset('js/selectize.js') }}"></script>
+<script src="{{ asset('js/index.js') }}"></script>
+
 <!-- Demo Js -->
 <script src="{{ asset('js/demo.js') }}"></script>
 <script src="{{ asset('js/init.js') }}"></script>

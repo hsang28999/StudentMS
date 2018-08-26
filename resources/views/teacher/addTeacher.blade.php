@@ -1,6 +1,6 @@
 @extends('layout')
 @section('section')
-    <section class="content">
+    <section class="content yyyymmdd">
         <div class="container-fluid">
             <!-- Subject create Table-->
             <div class="row clearfix">
@@ -24,67 +24,28 @@
                             </h2>
                         </div>
                         <div class="body container-fluid ">
-                            <form class="form-horizontal col-xs-8" >
+                            <form class="form-horizontal col-xs-8" action="{{URL::action('TeacherController@store')}}" method="POST">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="">Name</label>
+                                        <label for="">Teacher Name</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="" class="form-control" placeholder="">
+                                                <input type="text" id="" class="form-control" placeholder="" name="teacherName">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="">Designation</label>
+                                        <label for="">Joining Date</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                        <div class="form-group">
+                                        <div class="input-group">
                                             <div class="form-line">
-                                                <input type="text" id="" class="form-control" placeholder="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row clearfix">
-                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="">Date of Birth</label>
-                                    </div>
-                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                        <div class="form-group">
-                                            <div class="form-line">
-                                                <input type="text" id="" class="form-control" placeholder="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row clearfix">
-                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="">Gender</label>
-                                    </div>
-                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                        <div class="form-group">
-                                            <div class="">
-                                                <select name="" id="">
-                                                    <option value="1">Male</option>
-                                                    <option value="0">Female</option>
-
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row clearfix">
-                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="">Religion</label>
-                                    </div>
-                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                        <div class="form-group">
-                                            <div class="form-line">
-                                                <input type="text" id="" class="form-control" placeholder="">
+                                                <input type="text"  class="form-control date" placeholder="VD: 2016/07/26" name="joiningDate">
                                             </div>
                                         </div>
                                     </div>
@@ -96,19 +57,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="" class="form-control" placeholder="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row clearfix">
-                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="">Phone</label>
-                                    </div>
-                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                        <div class="form-group">
-                                            <div class="form-line">
-                                                <input type="text" id="" class="form-control" placeholder="">
+                                                <input type="text" id="" class="form-control" placeholder="" name="email">
                                             </div>
                                         </div>
                                     </div>
@@ -120,48 +69,52 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="" class="form-control" placeholder="">
+                                                <input type="text" id="" class="form-control" placeholder="" name="address">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="">Photo </label>
+                                        <label for="">Gender</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
-                                            <div class="form-line">
-                                                <input type="file" id="" class="form-control" placeholder="">
+                                            <div class="">
+                                                <select name="gender" id="">
+                                                    <option value="1">Male</option>
+                                                    <option value="0">Female</option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="">Username </label>
+                                        <label for="">Date of Birth</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                        <div class="form-group">
+                                        <div class="input-group">
                                             <div class="form-line">
-                                                <input type="text" id="" class="form-control" placeholder="">
+                                                <input type="text"  class="form-control date" placeholder="VD: 2016/07/26" name="dateOfBirth">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="">Password</label>
+                                        <label for="">Phone</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="password" id="" class="form-control" placeholder="">
+                                                <input type="text" id="" class="form-control" placeholder="eg:01282375119" name="phone">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-primary m-t-15 waves-effect">ADD</button>
+                                <button type="submit" class="btn btn-primary m-t-15 waves-effect">ADD</button>
+                                <button type="leave" class="btn btn-danger m-t-15 waves-effect">LEAVE</button>
                             </form>
                         </div>
                     </div>

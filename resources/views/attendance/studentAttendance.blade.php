@@ -8,18 +8,16 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                <a href="{{route('add_student_attendance')}}">
+                                <a href="{{route('add_attendance_student')}}">
                                     <button class="btn btn-success">ADD STUDENT ATTENDANCE</button>
                                 </a>
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <select class="mdb-select">
                                     <option value="" disabled selected>Select Class</option>
-                                    <option>T1707A</option>
-                                    <option>T1708M</option>
-                                    <option>T1708M</option>
-                                    <option>T1708M</option>
-                                    <option>T1708M</option>
+                                    @foreach($class as $classItem)
+                                    <option value="{{$classItem -> classId}}"> {{$classItem -> className}}</option>
+                                    @endforeach
                                 </select>
                             </ul>
                         </div>
@@ -36,42 +34,17 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($student as $studentItem)
                                         <tr>
-                                            <td>1</td>
-                                            <td>Johnson Crusor</td>
-                                            <td>T1707A</td>
-                                            <td>ABC@gmail.com</td>
+                                            <td>{{$studentItem -> studentId}}</td>
+                                            <td>{{$studentItem -> studentName}}</td>
+                                            <td>{{$studentItem -> classes_classId}}</td>
+                                            <td>{{$studentItem -> email}}</td>
                                             <td>
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('view_student_attendance')}}"><i class="material-icons">remove_red_eye</i></a></button>
+                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('view_attendance_student')}}/{{$studentItem -> studentId}}"><i class="material-icons">remove_red_eye</i></a></button>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>                                           
-                                            <td>Diana Rejex</td>
-                                            <td>T1707A</td>
-                                            <td>ABC@gmail.com</td>
-                                            <td>
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('view_student_attendance')}}"><i class="material-icons">remove_red_eye</i></a></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>                                           
-                                            <td>Alex Panther</td>
-                                            <td>T1707A</td>
-                                            <td>ABC@gmail.com</td>
-                                            <td>
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('view_student_attendance')}}"><i class="material-icons">remove_red_eye</i></a></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Loren Carlet</td>
-                                            <td>T1707A</td>
-                                            <td>ABC@gmail.com</td>
-                                            <td>
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('view_student_attendance')}}"><i class="material-icons">remove_red_eye</i></a></button>
-                                            </td>
-                                        </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>
