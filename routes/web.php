@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,16 +10,13 @@
 |
 */
 use App\Http\Controllers\Controller;
-
-Route::get('/',[
-    'as' => 'index', function () {
-        return view('layout');
-    }
-]);
-
-/*==========================ROUTE TEACHER================================================*/
-
-Route::group(['prefix' => 'teacher'],function (){
+Route::group(['middleware' => ['checkLogin']],function (){
+    Route::get('/',[
+        'as' => 'index', function () {
+            return view('layout');
+        }
+    ]) -> middleware('checkLogin');
+    Route::group(['prefix' => 'teacher'],function (){
 
     Route::get('/',[
         'as' => 'teacher',
@@ -216,5 +212,29 @@ Route::group(['prefix' => 'timeTable'],function (){
         'as' => 'addTimeTable','uses'=>'TimeTableController@getTimeTable'
      ]);
 });
-
-Route::get('/test','TimeTableController@saveTimeTableToDb');
+});
+//Auth::routes();
+Route::group(['prefix' => 'auth'],function(){
+    Route::get('login',[
+        'as' => 'auth.login', function(){
+            return view('auth.login');
+        }
+    ]);
+    Route::get('forgot',[
+        'as' => 'forgot-password', function(){
+            return view('auth.forgot-password');
+        }
+    ]);
+    Route::get('register',[
+        'as' => 'registerPage', function(){
+            return view('auth.register');
+        }
+    ]);
+    Route::post('login',['as' => 'login','uses' => 'Auth\LoginController@login']);
+    Route::post('logout' ,['as' => 'logout','uses' => 'Auth\LoginController@logout']);
+    Route::post('register' ,['as' => 'register','uses' => 'Auth\RegisterController@register']);
+});
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('test',['as' => 'testRoute',function(){
+    return 1;
+}]);
