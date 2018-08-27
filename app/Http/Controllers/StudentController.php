@@ -6,11 +6,17 @@ use App\Classes;
 use App\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
 {
-    public function index(){
-        $student = Student::all();
+    public function index(Request $request){
+
+        $student = DB::table('students')
+            ->join('classes', 'students.classes_classId', '=', 'classes.classId')
+            ->select('students.*','classes.className')
+            ->where('classes.classId','=',$request->class)
+            ->get();
         $class = Classes::all();
         return view('student.student') -> with('student',$student)
                                         -> with('class',$class );

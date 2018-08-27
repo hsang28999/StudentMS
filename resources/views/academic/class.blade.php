@@ -10,7 +10,7 @@
                         <ol class="breadcrumb pull-right m-t--15">
                         </ol>
                         <h2 style="display: inline">
-                            TEACHER DETAIL
+                            LIST CLASS
                         </h2>
                     </div>
                     <div class="body">
@@ -23,36 +23,36 @@
                             <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                 <thead>
                                 <tr>
-                                    <th>Class ID</th>
+                                    <th>#</th>
                                     <th>Class Name</th>
-                                    <th>Teacher ID</th>
                                     <th>Teacher Name</th>
+                                    <th>Teacher Email</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
-                                @foreach ($class as $cls)
+                                @foreach ($class as $key => $cls)
                                 <tbody>
                                 <tr>
-                                    <td>{{$cls -> classId}}</td>
+                                    <td>{{$key+1}}</td>
                                     <td>{{$cls -> className}}</td>
-                                    <td>{{$cls -> teachers_teacherId}}</td>
                                     <td>{{$cls -> teacherName}}</td>
+                                    <td>{{$cls -> email}}</td>
                                     <td>
                                         <button type="button" data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-small bg-lime waves-effect ">
-                                            <a href="academic_class/{{$cls -> classId}}/edit">
+                                            <a href="academic_class/edit/{{$cls -> classId}}">
                                                 <i class="material-icons">edit</i>
                                             </a>
                                         </button>
 
                                         <button type="button" data-toggle="tooltip" data-placement="top" title="Delete" class="btn btn-small bg-red waves-effect">
-                                            <a href="academic_class/{{$cls -> classId}}/delete">
+                                            <a href="academic_class/delete/{{$cls -> classId}}">
                                                 <i class="material-icons">delete</i>
                                             </a>
                                         </button>
                                     </td>
-                                </tr>                                
-                                </tbody> 
-                                @endforeach                        
+                                </tr>
+                                </tbody>
+                                @endforeach
                             </table>
                         </div>
                     </div>

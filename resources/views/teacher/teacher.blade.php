@@ -12,7 +12,7 @@
 
                         </ol>
                         <h2 style="display: inline" >
-                            TEACHER DETAIL
+                            TEACHER
                         </h2>
                     </div>
                     <div class="body" id="small-table">
@@ -25,7 +25,7 @@
                             <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                 <thead>
                                 <tr>
-                                    <th>Teacher ID</th>
+                                    <th>#</th>
                                     <th>Teacher Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
@@ -33,20 +33,20 @@
                                     <th>Action</th>
                                 </tr>
                                 </thead>
-                                <?php foreach ($allTeachers as $tch): ?>
+                                <?php foreach ($allTeachers as $key => $tch): ?>
                                 <tbody>
                                     <tr>
-                                        <td><?php echo $tch['teacherId'] ?></td>
+                                        <td>{{$key+1}}</td>
                                         <td><?php echo $tch['teacherName'] ?></td>
                                         <td><?php echo $tch['email'] ?></td>
                                         <td><?php echo $tch['phone'] ?></td>
-                                        <td><?php echo $tch['dateOfBirth'] ?></td>
+                                        <td class="dayValue"><?php echo $tch['dateOfBirth'] ?></td>
                                         <td>
-                                            <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="teacher/<?php echo $tch['teacherId']?>/view"><i class="material-icons">remove_red_eye</i></a></button>
+                                            <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="teacher/view/<?php echo $tch['teacherId']?>"><i class="material-icons">remove_red_eye</i></a></button>
 
-                                            <button type="button" data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-small bg-lime waves-effect "><a href="teacher/<?php echo $tch['teacherId']?>/edit"><i class="material-icons">edit</i></a></button>
+                                            <button type="button" data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-small bg-lime waves-effect "><a href="teacher/edit/<?php echo $tch['teacherId']?>"><i class="material-icons">edit</i></a></button>
 
-                                            <button type="button" data-toggle="tooltip" data-placement="top" title="Delete" class="btn btn-small bg-red waves-effect"><a href="teacher/<?php echo $tch['teacherId']?>/delete"><i class="material-icons" style="color: white;">delete</i></a></button>
+                                            <button type="button" data-toggle="tooltip" data-placement="top" title="Delete" class="btn btn-small bg-red waves-effect"><a href="teacher/delete/<?php echo $tch['teacherId']?>"><i class="material-icons" style="color: white;">delete</i></a></button>
                                         </td>
                                     </tr>
                                 </tbody>

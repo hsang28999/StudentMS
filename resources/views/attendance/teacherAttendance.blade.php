@@ -8,7 +8,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                <a href="{{route('add_attendance_teacher')}}"><button class="btn btn-success">ADD TEACHER ATTENDANCE</button>
+                                <a href="{{route('add_attendance_teacher')}}"><button class="btn btn-success">ADD TEACHER ATTENDANCE</button></a>
                             </h2>
                         </div>
                         <div class="body">
