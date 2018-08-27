@@ -11,6 +11,7 @@ mapBC["attendance_teacher"] = '<i class="fas fa-user-tie" ></i> Attendance Teach
 mapBC["mark"] = '<i class="fas fa-clipboard-check"></i> Mark';
 mapBC["add"] = '<i class="material-icons">assignment</i> Add';
 mapBC["edit"] = '<i class="material-icons">edit</i> Edit';
+mapBC["timeTable"] = '<i class="fas fa-calendar-alt"></i> Time Table';
 function generateBreadcrumb(section) {
     return '<li>\n' +
         '       <a href="javascript:void(0);">\n' +
@@ -26,13 +27,13 @@ function generateBreadcrumbs() {
     var section2 = arr[4];
     var section3 = arr[5];
     var content ="";
-    console.log(section2);
+
     if (section1 != undefined){
         content += generateBreadcrumb(section1);
-        if (section2 != undefined){
+        if (section2 != undefined && isNaN(section2)){
 
             content += generateBreadcrumb(section2);
-            if (section3 != undefined){
+            if (section3 != undefined && isNaN(section3)){
                 content += generateBreadcrumb(section3);
             }
         }

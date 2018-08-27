@@ -23,12 +23,12 @@ Route::group(['middleware' => ['checkLogin']],function (){
         'uses' => 'TeacherController@index'
     ]);
 
-    Route::get('/{teacherId}/view',[
+    Route::get('/view/{teacherId}',[
         'as' => 'viewTeacher',
         'uses' => 'TeacherController@view'
     ]);
 
-    Route::get('/{teacherId}/edit',[
+    Route::get('/edit/{teacherId}',[
         'as' => 'editTeacher',
         'uses' => 'TeacherController@edit'
     ]);
@@ -40,7 +40,7 @@ Route::group(['middleware' => ['checkLogin']],function (){
     ]);
     Route::post('/add','TeacherController@store');
 
-    Route::get('/{teacherId}/delete', 'TeacherController@delete');
+    Route::get('/delete/{teacherId}', 'TeacherController@delete');
 });
 
 /*=========================ROUTE ACADEMIC=====================================*/
@@ -58,13 +58,13 @@ Route::group(['prefix' => 'academic'],function (){
         ]);
         Route::post('/add', 'ClassController@store');
 
-        Route::get('/{classId}/edit',[
+        Route::get('/edit/{classId}',[
             'as' => 'editClass',
             'uses' => 'ClassController@edit'
         ]);
-        Route::post('/{classId}/edit', 'ClassController@update');
+        Route::post('/edit/{classId}', 'ClassController@update');
 
-        Route::get('/{classId}/delete', 'ClassController@delete');
+        Route::get('/delete/{classId}', 'ClassController@delete');
     });
 
 

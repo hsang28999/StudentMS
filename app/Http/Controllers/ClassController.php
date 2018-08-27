@@ -37,7 +37,7 @@ class ClassController extends Controller
     public function index(){
         $class = DB::table('classes')
             ->join('teachers', 'classes.teachers_teacherId', '=', 'teachers.teacherId')
-            ->select('classes.*','teachers.teacherName')
+            ->select('classes.*','teachers.teacherName','teachers.email')
             ->get();
         return view('academic.class')-> with('class',$class );
     }

@@ -20,18 +20,23 @@
                                 <a href="{{route('addStudent')}}">
                                     <button class="btn btn-success">ADD STUDENT</button>
                                 </a>
+                                <form id="submit"  style="display: inline-block" method="get" action="">
+                                    <select class="mdb-select" name="class">
+                                        <option value="" disabled selected>Select Class</option>
 
-                                <select class=" show-tick pull-right" >
-                                    @foreach($class as $item)
-                                        <option><a href="{{route('student')}}/class/{{$item -> classId}}">{{$item -> className}}</a></option>
-                                    @endforeach
-                                </select>
+                                        @foreach($class as $item)
+                                            <option  value="{{$item -> classId}}" @if($item -> classId == app('request')->input('class')) selected @endif>{{$item -> className}}</option>
+                                        @endforeach
+                                    </select>
+                                    <button class="btn bg-deep-purple waves-effect" type="submit">Find</button>
+                                </form>
+
                             </div>
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>
-                                            <th>StudentCode</th>
+                                            <th>#</th>
                                             <th>Name</th>
                                             <th>Class</th>
                                             <th>Email</th>
@@ -39,11 +44,11 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($student as $item)
+                                        @foreach($student as $key=> $item)
                                         <tr>
-                                            <td>{{$item -> studentCode}}</td>
+                                            <td>{{$key+1}}</td>
                                             <td>{{$item -> studentName}}</td>
-                                            <td>{{$item -> classes_classId}}</td>
+                                            <td>{{$item -> className}}</td>
                                             <td>{{$item -> email}}</td>
                                             <td>
                                                 <button type="button" data-toggle="tooltip" data-placement="top" title="View" class="btn btn-small bg-light-green waves-effect"><a href="{{route('student')}}/view/{{$item -> studentId}}"><i class="material-icons">remove_red_eye</i></a></button>
