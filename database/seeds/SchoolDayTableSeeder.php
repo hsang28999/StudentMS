@@ -18,8 +18,8 @@ class SchoolDayTableSeeder extends Seeder
                 [
                     'dayValue' => '2018-08-'.($i+1),
                     'classes_classId' => mt_rand (1,15),
-                    'created_at' => \Illuminate\Support\Carbon::now(),
-                    'updated_at' => \Illuminate\Support\Carbon::now()
+                    'created_at' => \Illuminate\Support\Carbon::now('Asia/Ho_Chi_Minh'),
+                    'updated_at' => \Illuminate\Support\Carbon::now('Asia/Ho_Chi_Minh')
                 ]
             ]);
         }

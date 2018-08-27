@@ -21,8 +21,8 @@ class SubjectTableSeeder extends Seeder
                     'passMark' => mt_rand (5*10, 7*10) / 10,
                     'finalMark' => mt_rand (9*10, 10*10) / 10,
                     'teachers_teacherId' => ($i+1),
-                    'created_at' =>  \Illuminate\Support\Carbon::now(),
-                    'updated_at' =>  \Illuminate\Support\Carbon::now(),
+                    'created_at' =>  \Illuminate\Support\Carbon::now('Asia/Ho_Chi_Minh'),
+                    'updated_at' =>  \Illuminate\Support\Carbon::now('Asia/Ho_Chi_Minh'),
                 ],
             ]);
         }

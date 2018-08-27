@@ -74,8 +74,8 @@ class StudentTableSeeder extends Seeder
                     'phoneNumber' => '0'.mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9),
                     'studentName' => $name1.' '.$name2.' '.$name3,
                     'classes_classId' => mt_rand(1,15),
-                    'created_at' =>  \Illuminate\Support\Carbon::now(),
-                    'updated_at' =>  \Illuminate\Support\Carbon::now(),
+                    'created_at' =>  \Illuminate\Support\Carbon::now('Asia/Ho_Chi_Minh'),
+                    'updated_at' =>  \Illuminate\Support\Carbon::now('Asia/Ho_Chi_Minh'),
                 ]
 
 

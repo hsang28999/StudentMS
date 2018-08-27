@@ -73,8 +73,8 @@ class teachersTableSeeder extends Seeder
                     'gender' => mt_rand(0,1),
                     'dateOfBirth' => '19'.mt_rand(80,94).'-'.mt_rand(1,12).'-'.mt_rand(1,28),
                     'phone' => '0'.mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9),
-                    'created_at' =>  \Illuminate\Support\Carbon::now(),
-                    'updated_at' =>  \Illuminate\Support\Carbon::now(),
+                    'created_at' =>  \Illuminate\Support\Carbon::now('Asia/Ho_Chi_Minh'),
+                    'updated_at' =>  \Illuminate\Support\Carbon::now('Asia/Ho_Chi_Minh'),
                 ],
 
             ]);
