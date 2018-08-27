@@ -11,20 +11,22 @@
                         <ol class="breadcrumb pull-right m-t--15">
 
                         </ol>
-                        <h2 style="display: inline">
+                        <h2 style="display: inline" >
                             TEACHER DETAIL
                         </h2>
                     </div>
                     <div class="body" id="small-table">
-                        <a href="{{route('addTeacher')}}">
-                            <button class="btn btn-success">ADD TEACHER</button>
-                        </a>
+                        <div class="form-float" style="height: 35px;">
+                            <a href="{{route('addTeacher')}}">
+                                <button class="btn btn-success">ADD TEACHER</button>
+                            </a>
+                        </div>
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                 <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>Name</th>
+                                    <th>Teacher ID</th>
+                                    <th>Teacher Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
                                     <th>Date of Birth</th>
