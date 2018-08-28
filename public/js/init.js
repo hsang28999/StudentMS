@@ -328,6 +328,7 @@ function submitTimeTableToApi(timeTable) {
         dataType: 'json',
         success: function(data){
             console.log(data);
+            alert("Success !");
         }
     });
 }

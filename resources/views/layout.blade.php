@@ -173,12 +173,12 @@
                         </li>
                     </ul>
                 </li>
-                <li id="mark">
-                    <a href="{{route('mark')}}">
-                        <i class="fas fa-clipboard-check" style="font-size: 19px"></i>
-                        <span>Mark</span>
-                    </a>
-                </li>
+                {{--<li id="mark">--}}
+                    {{--<a href="{{route('mark')}}">--}}
+                        {{--<i class="fas fa-clipboard-check" style="font-size: 19px"></i>--}}
+                        {{--<span>Mark</span>--}}
+                    {{--</a>--}}
+                {{--</li>--}}
                 <li id="timeTable">
                     <a href="{{route('timeTable')}}">
                         <i class="fas fa-calendar-alt" style="font-size: 19px"></i>

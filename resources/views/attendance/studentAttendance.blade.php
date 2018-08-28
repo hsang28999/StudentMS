@@ -8,13 +8,14 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                <a href="{{route('add_attendance_student')}}">
-                                    <button class="btn btn-success"> STUDENT ATTENDANCE</button>
-                                </a>
+                                STUDENT ATTENDANCE
                             </h2>
 
                         </div>
                         <div class="body">
+                            <a href="{{route('add_attendance_student')}}">
+                                <button class="btn btn-success"> STUDENT ATTENDANCE</button>
+                            </a>
                             <form id="submit" method="get" action="">
                                     <select class="mdb-select" name="class">
                                         <option value="" disabled selected>Select Class</option>

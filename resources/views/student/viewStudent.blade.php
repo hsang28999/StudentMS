@@ -11,8 +11,7 @@
 	                            <!-- Nav tabs -->
 	                            <ul class="nav nav-tabs tab-nav-right" role="tablist">
 	                                <li role="presentation" class="active"><a href="#profile" data-toggle="tab">Profile</a></li>
-	                                <li role="presentation"><a href="#attendance1" data-toggle="tab">Attendance</a></li>
-	                                <li role="presentation"><a href="#mark1" data-toggle="tab">Mark</a></li>
+
 	                            </ul>
 
 	                            <!-- Tab panes -->
